@@ -53,6 +53,7 @@ public class restablecerPass extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(getApplicationContext(), "Contraseña recuperada correctamente", Toast.LENGTH_SHORT).show();
+                finish();
                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
             }

@@ -50,6 +50,7 @@ public class admin_patrones_agregar extends AppCompatActivity implements View.On
             @Override
             public void onResponse(String response) {
                     Toast.makeText(getApplicationContext(), "Patron creado correctamente ", Toast.LENGTH_SHORT).show();
+                    finish();
                     Intent intent = new Intent(getApplicationContext(), admin_patrones_crud.class);
                     startActivity(intent);
             }

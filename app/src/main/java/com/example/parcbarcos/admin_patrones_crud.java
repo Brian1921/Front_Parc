@@ -136,6 +136,7 @@ public class admin_patrones_crud extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(admin_patrones_crud.this, "Eliminando Patron", Toast.LENGTH_SHORT).show();
+                finish();
                 startActivity(new Intent(getApplicationContext(), admin_patrones_crud.class));
             }
         }, new Response.ErrorListener() {

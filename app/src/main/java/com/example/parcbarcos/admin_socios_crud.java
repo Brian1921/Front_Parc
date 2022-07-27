@@ -139,6 +139,7 @@ public class admin_socios_crud extends AppCompatActivity {
             @Override
             public void onResponse(String response) {
                 Toast.makeText(admin_socios_crud.this, "Eliminando socio", Toast.LENGTH_SHORT).show();
+                finish();
                 startActivity(new Intent(getApplicationContext(), admin_socios_crud.class));
             }
         }, new Response.ErrorListener() {

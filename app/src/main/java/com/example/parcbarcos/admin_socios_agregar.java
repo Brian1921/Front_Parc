@@ -53,6 +53,7 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
             @Override
             public void onResponse(String response) {
                     Toast.makeText(getApplicationContext(), "Socio creado correctamente ", Toast.LENGTH_SHORT).show();
+                    finish();
                     Intent intent = new Intent(getApplicationContext(), admin_socios_crud.class);
                     startActivity(intent);
             }
