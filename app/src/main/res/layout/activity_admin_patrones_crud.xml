@@ -22,9 +22,8 @@
             android:id="@+id/textView7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_centerHorizontal="true"
-            android:layout_centerVertical="true"
-            android:text="SOCIOS"
+            android:layout_centerInParent="true"
+            android:text="PATRONES"
             android:textAlignment="textEnd"
             android:textSize="20sp" />
 
@@ -33,7 +32,7 @@
             android:layout_width="74dp"
             android:layout_height="match_parent"
             android:layout_alignLeft="@id/textView7"
-            android:layout_marginLeft="153dp"
+            android:layout_marginLeft="180dp"
             app:srcCompat="@mipmap/logo" />
 
     </RelativeLayout>
