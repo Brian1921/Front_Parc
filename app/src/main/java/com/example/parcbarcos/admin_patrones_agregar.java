@@ -81,6 +81,7 @@ public class admin_patrones_agregar extends AppCompatActivity implements View.On
     public void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnAgregar_admin_patron){
+            //insertarSocioAdmin("http://192.168.1.1/crud_club_barcos/admin/socios/update.php");
             insertarSocioAdmin("http://192.168.0.12/crud_club_barcos/admin/patrones/insert.php");
         }
 

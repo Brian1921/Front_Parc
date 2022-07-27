@@ -105,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnIngresar){
-            //insertar("http://10.28.0.102:1021/comp2022/insert.php");
+            //validarUsuario("http://192.168.1.1/crud_club_barcos/inicio_sesion/validar.php");
             validarUsuario("http://192.168.0.12/crud_club_barcos/inicio_sesion/validar.php");
         }
     }

@@ -84,6 +84,7 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnAgregar_admin_socio){
+            //insertarSocioAdmin("http://192.168.1.1/crud_club_barcos/admin/socios/insert.php");
             insertarSocioAdmin("http://192.168.0.12/crud_club_barcos/admin/socios/insert.php");
         }
 

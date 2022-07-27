@@ -29,7 +29,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class admin_patrones_crud extends AppCompatActivity {
-
+    //String url="http://192.168.1.1/crud_club_barcos/admin/patrones/update.php";
     String url ="http://192.168.0.12/crud_club_barcos/admin/patrones/read.php";
     class_admin_patrones patrones;
     public static ArrayList<class_admin_patrones> class_admin_patronesArrayList = new ArrayList<>();
@@ -129,6 +129,7 @@ public class admin_patrones_crud extends AppCompatActivity {
     }
 
     public void eliminarAdminPatrones(String id){
+        //String urlel="http://192.168.1.1/crud_club_barcos/admin/patrones/update.php";
         String urlel="http://192.168.0.12/crud_club_barcos/admin/patrones/delete.php";
         StringRequest request = new StringRequest(Request.Method.POST, urlel, new Response.Listener<String>() {
 
