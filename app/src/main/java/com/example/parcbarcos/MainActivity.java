@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     ArrayAdapter<String> adapterItems;
 
     EditText editTextTextPersonName,editTextTextPassword;
-    Button btnIngresar;
+    Button btnIngresar, btnInicio_recuperar;
     RequestQueue requestQueue;
 
 
@@ -44,8 +44,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         editTextTextPersonName=findViewById(R.id.txtUsuario);
         editTextTextPassword=findViewById(R.id.txtPass);
+
         btnIngresar = findViewById(R.id.btnIngresar);
         btnIngresar.setOnClickListener(this::onClick);
+
+        btnInicio_recuperar = findViewById(R.id.btnInicio_recuperar);
+        btnInicio_recuperar.setOnClickListener(this::onClick);
 
 
         autoCompleteTxt =findViewById(R.id.auto_complete_txt);
@@ -107,6 +111,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         if(id==R.id.btnIngresar){
             //validarUsuario("http://192.168.1.1/crud_club_barcos/inicio_sesion/validar.php");
             validarUsuario("http://192.168.0.12/crud_club_barcos/inicio_sesion/validar.php");
+        }
+        if(id==R.id.btnInicio_recuperar){
+            Intent intent = new Intent(getApplicationContext(), restablecerPass.class);
+            startActivity(intent);
         }
     }
 }
