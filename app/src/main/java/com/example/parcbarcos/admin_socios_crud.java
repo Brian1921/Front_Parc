@@ -37,6 +37,7 @@ public class admin_socios_crud extends AppCompatActivity {
     String url="http://192.168.0.12/crud_club_barcos/admin/socios/read.php";
 
     class_admin_socios socios;
+    RequestQueue requestQueue;
 
 
 
@@ -65,7 +66,7 @@ public class admin_socios_crud extends AppCompatActivity {
                                 //startActivity(new Intent(getApplicationContext(),admin_socios_crud_editar.class).putExtra("position", position));
                                 break;
                             case 1:
-                                //ELiminarAdminSocio(class_admin_sociosArrayList.get(position).getId_socio());
+                                eliminarAdminSocio(class_admin_sociosArrayList.get(position).getId_socio());
                                 break;
                         }
                     }
@@ -127,5 +128,32 @@ public class admin_socios_crud extends AppCompatActivity {
 
     public void agregarAdminSocio(View view){
         startActivity(new Intent(getApplicationContext(),admin_socios_agregar.class));
+    }
+
+    public void eliminarAdminSocio(String id){
+        String urlel="http://192.168.0.12/crud_club_barcos/admin/socios/delete.php";
+        StringRequest request = new StringRequest(Request.Method.POST, urlel, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(admin_socios_crud.this, "Eliminando socio", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), admin_socios_crud.class));
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(admin_socios_crud.this, "Error al eliminar socio", Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String,String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("id", id);
+
+                return parametros;
+            }
+        };
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(request);
     }
 }

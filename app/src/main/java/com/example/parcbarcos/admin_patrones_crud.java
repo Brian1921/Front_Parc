@@ -12,6 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -24,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class admin_patrones_crud extends AppCompatActivity {
 
@@ -32,6 +35,8 @@ public class admin_patrones_crud extends AppCompatActivity {
     public static ArrayList<class_admin_patrones> class_admin_patronesArrayList = new ArrayList<>();
     ListView listView;
     Adapter_class_admin_patrones adapter;
+
+    RequestQueue requestQueue;
 
 
     @Override
@@ -59,7 +64,7 @@ public class admin_patrones_crud extends AppCompatActivity {
                                 //startActivity(new Intent(getApplicationContext(),admin_socios_crud_editar.class).putExtra("position", position));
                                 break;
                             case 1:
-                                //ELiminarAdminSocio(class_admin_sociosArrayList.get(position).getId_socio());
+                                eliminarAdminPatrones(class_admin_patronesArrayList.get(position).getId_patron());
                                 break;
                         }
                     }
@@ -121,5 +126,32 @@ public class admin_patrones_crud extends AppCompatActivity {
 
     public void agregarAdminPatrones(View view){
         startActivity(new Intent(getApplicationContext(),admin_patrones_agregar.class));
+    }
+
+    public void eliminarAdminPatrones(String id){
+        String urlel="http://192.168.0.12/crud_club_barcos/admin/patrones/delete.php";
+        StringRequest request = new StringRequest(Request.Method.POST, urlel, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(admin_patrones_crud.this, "Eliminando Patron", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getApplicationContext(), admin_patrones_crud.class));
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(admin_patrones_crud.this, "Error al eliminar patron", Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String,String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("id", id);
+
+                return parametros;
+            }
+        };
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(request);
     }
 }
