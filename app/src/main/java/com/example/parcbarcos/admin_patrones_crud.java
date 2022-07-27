@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -116,5 +117,9 @@ public class admin_patrones_crud extends AppCompatActivity {
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(request);
 
+    }
+
+    public void agregarAdminPatrones(View view){
+        startActivity(new Intent(getApplicationContext(),admin_socios_agregar.class));
     }
 }
