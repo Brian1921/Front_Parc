@@ -19,6 +19,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".admin_patrones_editar"
+            android:exported="false" />
+        <activity
+            android:name=".admin_socios_editar"
+            android:exported="false" />
+        <activity
             android:name=".admin_patrones_agregar"
             android:exported="false" />
         <activity

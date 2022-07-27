@@ -63,7 +63,7 @@ public class admin_socios_crud extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i){
                             case 0:
-                                //startActivity(new Intent(getApplicationContext(),admin_socios_crud_editar.class).putExtra("position", position));
+                                startActivity(new Intent(getApplicationContext(),admin_socios_editar.class).putExtra("position", position));
                                 break;
                             case 1:
                                 eliminarAdminSocio(class_admin_sociosArrayList.get(position).getId_socio());
