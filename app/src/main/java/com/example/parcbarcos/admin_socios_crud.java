@@ -124,4 +124,8 @@ public class admin_socios_crud extends AppCompatActivity {
         requestQueue.add(request);
 
     }
+
+    public void agregarAdminSocio(View view){
+        startActivity(new Intent(getApplicationContext(),admin_socios_agregar.class));
+    }
 }
