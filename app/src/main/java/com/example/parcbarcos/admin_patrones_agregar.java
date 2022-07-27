@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,14 +20,14 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class admin_patrones_agregar extends AppCompatActivity {
+public class admin_patrones_agregar extends AppCompatActivity{
 
     EditText txtId_crear_patron, txtNom_crear_patron, txtApe_crear_patron, txtTel_crear_patron, txtEm_crear_patron, txtRes_crear_patron,
             txtUs_crear_patron, txtPas_crear_patron;
 
     RequestQueue requestQueue;
     Button btnCrear_patron;
-
+/*
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,7 +42,7 @@ public class admin_patrones_agregar extends AppCompatActivity {
         txtPas_crear_patron=findViewById(R.id);
 
         btnCrear_patron=findViewById(R.id);
-        btnCrear_patron.setOnClickListener(this::onClick());
+        btnCrear_patron.setOnClickListener(this::onClick);
     }
 
     private void insertarSocioAdmin(String url) {
@@ -80,4 +81,9 @@ public class admin_patrones_agregar extends AppCompatActivity {
         requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
     }
+
+    @Override
+    public void onClick(View view) {
+
+    }*/
 }

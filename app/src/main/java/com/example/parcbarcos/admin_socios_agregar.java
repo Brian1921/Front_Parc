@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,7 +20,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class admin_socios_agregar extends AppCompatActivity {
+public class admin_socios_agregar extends AppCompatActivity implements View.OnClickListener{
 
     EditText txtId_crear_socio, txtNom_crear_socio, txtApe_crear_socio, txtTel_crear_socio, txtEm_crear_socio, txtRes_crear_socio,
     txtUs_crear_socio, txtPas_crear_socio;
@@ -30,33 +31,30 @@ public class admin_socios_agregar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_socios_agregar);
-        txtId_crear_socio=findViewById(R.id.);
-        txtNom_crear_socio=findViewById(R.id);
-        txtApe_crear_socio=findViewById(R.id);
-        txtTel_crear_socio=findViewById(R.id);
-        txtEm_crear_socio=findViewById(R.id);
-        txtRes_crear_socio=findViewById(R.id);
-        txtUs_crear_socio=findViewById(R.id);
-        txtPas_crear_socio=findViewById(R.id.);
+        txtId_crear_socio=findViewById(R.id.editId_admin_crear_socio);
+        txtNom_crear_socio=findViewById(R.id.editNom_admin_crear_socio);
+        txtApe_crear_socio=findViewById(R.id.editApe_admin_crear_socio);
+        txtTel_crear_socio=findViewById(R.id.editTel_admin_crear_socio);
+        txtEm_crear_socio=findViewById(R.id.editEm_admin_crear_socio);
+        txtRes_crear_socio=findViewById(R.id.editRes_admin_crear_socio);
+        txtUs_crear_socio=findViewById(R.id.editUs_admin_crear_socio);
+        txtPas_crear_socio=findViewById(R.id.editPass_admin_crear_socio);
 
-        btnCrear_socio=findViewById(R.id);
-        btnCrear_socio.setOnClickListener(this::onClick());
+        btnCrear_socio=findViewById(R.id.btnAgregar_admin_socio);
+        btnCrear_socio.setOnClickListener(this::onClick);
 
     }
+
+
 
     private void insertarSocioAdmin(String url){
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(!response.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Socio creado correctamente ", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), admin_socios_crud.class);
                     startActivity(intent);
-
-                }else{
-                    Toast.makeText(getApplicationContext(), "Ocurrio un error al ingresar el socio", Toast.LENGTH_SHORT).show();
-                }
             }
         }, new Response.ErrorListener() {
             @Override
@@ -80,5 +78,14 @@ public class admin_socios_agregar extends AppCompatActivity {
         };
         requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(stringRequest);
+    }
+
+    @Override
+    public void onClick(View view) {
+        int id= view.getId();
+        if(id==R.id.btnAgregar_admin_socio){
+            insertarSocioAdmin("http://192.168.0.12/crud_club_barcos/admin/socios/insert.php");
+        }
+
     }
 }
