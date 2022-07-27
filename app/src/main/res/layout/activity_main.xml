@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#03052E "
+    android:background="#03052E"
     android:textAlignment="center"
     tools:context=".MainActivity">
 
@@ -122,7 +122,7 @@
                 android:layout_width="309dp"
                 android:layout_height="84dp"
                 android:layout_margin="40dp"
-                android:layout_marginLeft="30dp"
+                android:layout_marginLeft="10dp"
                 android:layout_marginTop="20dp"
                 android:hint="Seleccionar rol"
                 android:padding="10dp"
@@ -142,13 +142,28 @@
                     android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <Button
                 android:id="@+id/btnInicio_recuperar"
-                android:layout_width="159dp"
-                android:layout_height="52dp"
-                android:layout_marginLeft="220dp"
-                android:text="Button" />
+                android:layout_width="138dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="240dp"
+                android:background="@drawable/bordes"
+                android:text="Recuperar" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="26dp"
+                android:layout_marginLeft="20dp"
+                android:text="¿Olvidó su contraseña?"
+                android:textColor="@color/white"
+                android:textSize="20dp" />
+
+        </RelativeLayout>
 
             <Button
                 android:id="@+id/btnIngresar"
@@ -159,7 +174,7 @@
                 android:layout_marginEnd="151dp"
                 android:backgroundTint="#D9D9D9"
                 android:text="Ingresar"
-                android:textColor="#000000"
+                android:textColor="#03052E"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent" />
