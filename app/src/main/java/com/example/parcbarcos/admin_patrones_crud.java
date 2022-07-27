@@ -120,6 +120,6 @@ public class admin_patrones_crud extends AppCompatActivity {
     }
 
     public void agregarAdminPatrones(View view){
-        startActivity(new Intent(getApplicationContext(),admin_socios_agregar.class));
+        startActivity(new Intent(getApplicationContext(),admin_patrones_agregar.class));
     }
 }

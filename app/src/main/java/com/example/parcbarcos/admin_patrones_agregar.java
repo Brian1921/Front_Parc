@@ -20,28 +20,28 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class admin_patrones_agregar extends AppCompatActivity{
+public class admin_patrones_agregar extends AppCompatActivity implements View.OnClickListener{
 
     EditText txtId_crear_patron, txtNom_crear_patron, txtApe_crear_patron, txtTel_crear_patron, txtEm_crear_patron, txtRes_crear_patron,
             txtUs_crear_patron, txtPas_crear_patron;
 
     RequestQueue requestQueue;
     Button btnCrear_patron;
-/*
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_patrones_agregar);
-        txtId_crear_patron=findViewById(R.id.);
-        txtNom_crear_patron=findViewById(R.id);
-        txtApe_crear_patron=findViewById(R.id);
-        txtTel_crear_patron=findViewById(R.id);
-        txtEm_crear_patron=findViewById(R.id);
-        txtRes_crear_patron=findViewById(R.id);
-        txtUs_crear_patron=findViewById(R.id);
-        txtPas_crear_patron=findViewById(R.id);
+        txtId_crear_patron=findViewById(R.id.editId_admin_crear_patron);
+        txtNom_crear_patron=findViewById(R.id.editNom_admin_crear_patron);
+        txtApe_crear_patron=findViewById(R.id.editApe_admin_crear_patron);
+        txtTel_crear_patron=findViewById(R.id.editTel_admin_crear_patron);
+        txtEm_crear_patron=findViewById(R.id.editEm_admin_crear_patron);
+        txtRes_crear_patron=findViewById(R.id.editRes_admin_crear_patron);
+        txtUs_crear_patron=findViewById(R.id.editUs_admin_crear_patron);
+        txtPas_crear_patron=findViewById(R.id.editPass_admin_crear_patron);
 
-        btnCrear_patron=findViewById(R.id);
+        btnCrear_patron=findViewById(R.id.btnAgregar_admin_patron);
         btnCrear_patron.setOnClickListener(this::onClick);
     }
 
@@ -49,14 +49,9 @@ public class admin_patrones_agregar extends AppCompatActivity{
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                if(!response.isEmpty()){
                     Toast.makeText(getApplicationContext(), "Patron creado correctamente ", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), admin_patrones_crud.class);
                     startActivity(intent);
-
-                }else{
-                    Toast.makeText(getApplicationContext(), "Ocurrio un error al registrar el patron", Toast.LENGTH_SHORT).show();
-                }
             }
         }, new Response.ErrorListener() {
             @Override
@@ -84,6 +79,10 @@ public class admin_patrones_agregar extends AppCompatActivity{
 
     @Override
     public void onClick(View view) {
+        int id= view.getId();
+        if(id==R.id.btnAgregar_admin_patron){
+            insertarSocioAdmin("http://192.168.0.12/crud_club_barcos/admin/patrones/insert.php");
+        }
 
-    }*/
+    }
 }
