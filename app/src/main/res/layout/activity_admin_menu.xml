@@ -41,11 +41,33 @@
     </RelativeLayout>
 
     <Button
+        android:id="@+id/btnAdminUsu"
+        android:layout_width="113dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bordes"
+        android:text="USUARIOS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdminViajes" />
+
+    <Button
+        android:id="@+id/btnAdminPatrones"
+        android:layout_width="113dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bordes"
+        android:text="PATRONES"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdminSocios" />
+
+    <Button
         android:id="@+id/btnAdminSocios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="40dp"
+        android:layout_width="113dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="80dp"
         android:background="@drawable/bordes"
         android:text="SOCIOS"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,26 +75,36 @@
 
     <Button
         android:id="@+id/btnAdminBarcos"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="48dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="113dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="12dp"
         android:background="@drawable/bordes"
         android:text="BARCOS"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnAdminPatrones" />
 
     <Button
-        android:id="@+id/btnAdminPatrones"
+        android:id="@+id/btnAdminViajes"
+        android:layout_width="113dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bordes"
+        android:text="VIAJES"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnAdminBarcos" />
+
+    <Button
+        android:id="@+id/btnSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="460dp"
         android:background="@drawable/bordes"
-        android:text="PATRONES"
+        android:text="Cerrar Sesión"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdminSocios" />
-
+        app:layout_constraintTop_toBottomOf="@+id/group_2" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
