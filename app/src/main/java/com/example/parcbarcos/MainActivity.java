@@ -84,9 +84,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
+
                     if(!response.isEmpty()){
-                        Intent intent = new Intent(getApplicationContext(), admin_menu.class);
-                        startActivity(intent);
+
+                        if(rol.equals("ADMINISTRADOR")){
+                            Intent intent = new Intent(getApplicationContext(), admin_menu.class);
+                            startActivity(intent);
+                        }else if(rol.equals("SOCIO")){
+                            Intent intent = new Intent(getApplicationContext(), socio_menu.class);
+                            startActivity(intent);
+                        }else if(rol.equals("PATRÓN")){
+                            Intent intent = new Intent(getApplicationContext(), patron_menu.class);
+                            startActivity(intent);
+                        }
+
 
                     }else{
                         Toast.makeText(getApplicationContext(), "Ingreso de sesión inválido ", Toast.LENGTH_SHORT).show();
