@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         roles.add("ADMINISTRADOR");
         roles.add("SOCIO");
         roles.add("PATRÓN");
-        ArrayAdapter adp = new ArrayAdapter(MainActivity.this, android.R.layout.simple_spinner_dropdown_item,roles);
+        ArrayAdapter adp = new ArrayAdapter(MainActivity.this, R.layout.spinner_per,roles);
         spnUsuarios.setAdapter(adp);
 
         spnUsuarios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
