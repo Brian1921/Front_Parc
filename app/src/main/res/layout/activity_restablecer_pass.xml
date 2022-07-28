@@ -4,34 +4,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#03052E"
     tools:context=".restablecerPass">
 
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".reestablecer_pass">
-
-    <TextView
-        android:id="@+id/textView24"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="108dp"
-        android:layout_marginTop="59dp"
-        android:layout_marginEnd="109dp"
-        android:text="REESTABLECER CONTRASEÑA"
+    <RelativeLayout
+        android:id="@+id/group_2"
+        android:layout_width="415dp"
+        android:layout_height="91dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="68dp"
+        android:background="#D9D9D9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="RESTABLECER CONTRASEÑA"
+            android:textAlignment="textEnd"
+            android:textColor="#03052E"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/textView7"
+            android:layout_marginLeft="270dp"
+            app:srcCompat="@mipmap/logo" />
+
+    </RelativeLayout>
 
     <Button
         android:id="@+id/btnRecuperarPass"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="131dp"
         android:layout_marginTop="112dp"
-        android:layout_marginEnd="132dp"
+        android:gravity="center"
         android:text="Reestablecer"
+        android:backgroundTint="#D9D9D9"
+        android:textColor="#03052E"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editRes_recuperar" />
@@ -41,8 +57,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
+        android:textColor="@color/white"
         android:text="Id"
-        app:layout_constraintTop_toBottomOf="@+id/textView24"
+        app:layout_constraintTop_toBottomOf="@id/group_2"
         tools:layout_editor_absoluteX="199dp"
         tools:ignore="MissingConstraints" />
 
@@ -54,6 +71,8 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="105dp"
         android:ems="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:hint="Id. Usuario"
         android:inputType="number"
         app:layout_constraintEnd_toEndOf="parent"
@@ -67,6 +86,7 @@
         android:layout_marginStart="170dp"
         android:layout_marginTop="25dp"
         android:layout_marginEnd="170dp"
+        android:textColor="@color/white"
         android:text="Contraseña"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -80,6 +100,8 @@
         android:layout_marginTop="14dp"
         android:layout_marginEnd="101dp"
         android:ems="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:hint="Contraseña"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,6 +115,7 @@
         android:layout_marginStart="134dp"
         android:layout_marginTop="19dp"
         android:layout_marginEnd="134dp"
+        android:textColor="@color/white"
         android:text="Pregunta de Seguridad"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -105,6 +128,7 @@
         android:layout_marginStart="118dp"
         android:layout_marginTop="26dp"
         android:layout_marginEnd="117dp"
+        android:textColor="@color/white"
         android:text="¿Cual fue su primer colegio?"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -118,6 +142,8 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="98dp"
         android:ems="10"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
         android:hint="Respuesta"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"

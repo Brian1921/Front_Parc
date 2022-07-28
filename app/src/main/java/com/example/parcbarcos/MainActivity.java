@@ -10,6 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -20,17 +21,14 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    String [] cat = {"ADMINISTRADOR","SOCIO","PATRON"};
-
-    AutoCompleteTextView autoCompleteTxt;
-
-    ArrayAdapter<String> adapterItems;
-
+    Spinner spnUsuarios;
+    String rol;
     EditText editTextTextPersonName,editTextTextPassword;
     Button btnIngresar, btnInicio_recuperar;
     RequestQueue requestQueue;
@@ -51,17 +49,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnInicio_recuperar = findViewById(R.id.btnInicio_recuperar);
         btnInicio_recuperar.setOnClickListener(this::onClick);
 
+        spnUsuarios = (Spinner) findViewById(R.id.spnUsuarios);
 
-        autoCompleteTxt =findViewById(R.id.auto_complete_txt);
-        adapterItems = new ArrayAdapter<>(this,R.layout.item_list,cat);
-        autoCompleteTxt.setAdapter(adapterItems);
-        autoCompleteTxt.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        ArrayList<String> roles = new ArrayList<String>();
+
+        roles.add("ADMINISTRADOR");
+        roles.add("SOCIO");
+        roles.add("PATRÓN");
+        ArrayAdapter adp = new ArrayAdapter(MainActivity.this, android.R.layout.simple_spinner_dropdown_item,roles);
+        spnUsuarios.setAdapter(adp);
+
+        spnUsuarios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String item = parent.getItemAtPosition(position).toString();
-                /*Toast.makeText(getApplicationContext(),"Item: "+item,Toast.LENGTH_SHORT).show();*/
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                rol = (String) spnUsuarios.getAdapter().getItem(position);
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
+
+        
     }
 
     private void validarUsuario(String url){
@@ -96,7 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     Map<String,String> parametros = new HashMap<String,String>();
                     parametros.put("user", editTextTextPersonName.getText().toString());
                     parametros.put("pass", editTextTextPassword.getText().toString());
-                    parametros.put("rol", "ADMINISTRADOR");
+                    parametros.put("rol", rol);
                     return parametros;
                 }
             };
