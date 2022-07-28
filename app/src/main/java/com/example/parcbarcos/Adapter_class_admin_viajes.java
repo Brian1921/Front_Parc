@@ -1,9 +1,11 @@
 package com.example.parcbarcos;
 
 import android.content.Context;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,6 +26,18 @@ public class Adapter_class_admin_viajes extends ArrayAdapter<class_admin_viajes>
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        return super.getView(position, convertView, parent);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_viajes, null, true);
+
+        TextView txtId_viaje = view.findViewById(R.id.txtId_viaje);
+        TextView txtDestino = view.findViewById(R.id.txtDestino);
+        TextView txtFecha_Sal = view.findViewById(R.id.txtFecha_Sal);
+        TextView txtFecha_Lle = view.findViewById(R.id.txtFecha_Lle);
+        TextView txtNomBarco_viaje = view.findViewById(R.id.txtNomBarco_viaje);
+        TextView txtNomPatron_viaje = view.findViewById(R.id.txtNomPatron_viaje);
+        TextView txtNomSocio_viaje = view.findViewById(R.id.txtNomSocio_viaje);
+        TextView txtId_estado_viaje = view.findViewById(R.id.txtEst_viaje);
+
+
+        return view;
     }
 }
