@@ -12,7 +12,7 @@ public class class_admin_viajes {
     public class_admin_viajes() {
     }
 
-    public class_admin_viajes(String id_viaje, String fecha_salida, String fecha_llegada, String destino, String id_barco, String id_patron, String id_estado_viaje) {
+    public class_admin_viajes(String id_viaje, String destino, String fecha_salida, String fecha_llegada, String id_barco, String id_patron, String id_estado_viaje) {
         this.id_viaje = id_viaje;
         this.fecha_salida = fecha_salida;
         this.fecha_llegada = fecha_llegada;
