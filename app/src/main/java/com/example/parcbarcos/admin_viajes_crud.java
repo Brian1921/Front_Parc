@@ -5,12 +5,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -23,6 +25,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 public class admin_viajes_crud extends AppCompatActivity {
 
@@ -60,7 +64,7 @@ public class admin_viajes_crud extends AppCompatActivity {
                                 //startActivity(new Intent(getApplicationContext(),admin_patrones_editar.class).putExtra("position", position));
                                 break;
                             case 1:
-                                //eliminarAdminViajes(class_admin_viajesArrayList.get(position).);
+                                eliminarAdminViajes(class_admin_viajesArrayList.get(position).getId_viaje());
                                 break;
                         }
                     }
@@ -114,7 +118,38 @@ public class admin_viajes_crud extends AppCompatActivity {
         });
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(request);
-
     }
 
+    public void agregarAdminViaje(View view){
+        startActivity(new Intent(getApplicationContext(),admin_viajes_crear.class));
     }
+
+    public void eliminarAdminViajes(String id){
+        //String urlel="http://192.168.1.1/crud_club_barcos/admin/socios/delete.php";
+        String urlel="http://192.168.0.12/crud_club_barcos/admin/viajes/delete.php";
+        StringRequest request = new StringRequest(Request.Method.POST, urlel, new Response.Listener<String>() {
+
+            @Override
+            public void onResponse(String response) {
+                Toast.makeText(admin_viajes_crud.this, "Eliminando viaje", Toast.LENGTH_SHORT).show();
+                finish();
+                startActivity(new Intent(getApplicationContext(), admin_viajes_crud.class));
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(admin_viajes_crud.this, "Error al eliminar viaje", Toast.LENGTH_SHORT).show();
+            }
+        }){
+            @Override
+            protected Map<String,String> getParams() throws AuthFailureError {
+                Map<String,String> parametros = new HashMap<String,String>();
+                parametros.put("id", id);
+
+                return parametros;
+            }
+        };
+        requestQueue= Volley.newRequestQueue(this);
+        requestQueue.add(request);
+    }
+}
