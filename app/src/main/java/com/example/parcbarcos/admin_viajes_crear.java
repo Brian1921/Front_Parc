@@ -38,8 +38,8 @@ public class admin_viajes_crear extends AppCompatActivity {
         setContentView(R.layout.activity_admin_viajes_crear);
 
         editId_admin_isert_viajes= findViewById(R.id.editId_admin_insert_viajes);
-        editFS_admin_insert_viajes = findViewById(R.id.editFS_admin_insert_viajes);
-        editFL_admin_insert_viajes= findViewById(R.id.editFL_admin_insert_viajes);
+        //editFS_admin_insert_viajes = findViewById(R.id.editFS_admin_insert_viajes);
+        //editFL_admin_insert_viajes= findViewById(R.id.editFL_admin_insert_viajes);
         editDestino_admin_isert_viajes = findViewById(R.id.editDestino_admin_insert_viajes);
         editId_barco_admin_insert_viajes= findViewById(R.id.editId_barco_admin_insert_viajes);
         edit_Id_patron_admin_insert_viajes = findViewById(R.id.edit_Id_patron_admin_insert_viajes);
