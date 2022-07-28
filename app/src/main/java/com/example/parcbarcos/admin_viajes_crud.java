@@ -114,7 +114,5 @@ public class admin_viajes_crud extends AppCompatActivity {
         });
         RequestQueue requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(request);
-
     }
-
-    }
+}

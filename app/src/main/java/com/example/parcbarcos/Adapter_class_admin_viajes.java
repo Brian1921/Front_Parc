@@ -37,6 +37,14 @@ public class Adapter_class_admin_viajes extends ArrayAdapter<class_admin_viajes>
         TextView txtNomSocio_viaje = view.findViewById(R.id.txtNomSocio_viaje);
         TextView txtId_estado_viaje = view.findViewById(R.id.txtEst_viaje);
 
+        txtId_viaje.setText(arrayViajes.get(position).getId_viaje());
+        txtDestino.setText(arrayViajes.get(position).getDestino());
+        txtFecha_Sal.setText(arrayViajes.get(position).getFecha_salida());
+        txtFecha_Lle.setText(arrayViajes.get(position).getFecha_llegada());
+        txtNomBarco_viaje.setText(arrayViajes.get(position).getId_barco());
+        txtNomPatron_viaje.setText(arrayViajes.get(position).getId_patron());
+        txtNomSocio_viaje.setText(arrayViajes.get(position).getId_socio());
+        txtId_estado_viaje.setText(arrayViajes.get(position).getId_estado_viaje());
 
         return view;
     }
