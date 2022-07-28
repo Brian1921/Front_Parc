@@ -35,7 +35,7 @@
             android:layout_width="74dp"
             android:layout_height="match_parent"
             android:layout_alignLeft="@id/textView7"
-            android:layout_marginLeft="153dp"
+            android:layout_marginLeft="133dp"
             app:srcCompat="@mipmap/logo" />
 
     </RelativeLayout>
