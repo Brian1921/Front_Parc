@@ -46,36 +46,54 @@ public class admin_patrones_agregar extends AppCompatActivity implements View.On
     }
 
     private void insertarPatronAdmin(String url) {
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
+        if(txtId_crear_patron.getText().toString().isEmpty()){
+            txtId_crear_patron.setError("Digite el id");
+        }else if(txtNom_crear_patron.getText().toString().isEmpty()){
+            txtNom_crear_patron.setError("Digite el nombre");
+        }else if(txtApe_crear_patron.getText().toString().isEmpty()){
+            txtApe_crear_patron.setError("Digite el apellido");
+        }else if(txtTel_crear_patron.getText().toString().isEmpty()){
+            txtTel_crear_patron.setError("Digite el telefono");
+        }else if(txtEm_crear_patron.getText().toString().isEmpty()){
+            txtEm_crear_patron.setError("Digite el email");
+        }else if(txtRes_crear_patron.getText().toString().isEmpty()){
+            txtRes_crear_patron.setError("Digite la respuesta de seguridad");
+        }else if(txtUs_crear_patron.getText().toString().isEmpty()){
+            txtUs_crear_patron.setError("Digite el usuario");
+        }else if(txtPas_crear_patron.getText().toString().isEmpty()){
+            txtPas_crear_patron.setError("Digite la contraseña");
+        }else{
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
                     Toast.makeText(getApplicationContext(), "Patron creado correctamente ", Toast.LENGTH_SHORT).show();
                     finish();
                     Intent intent = new Intent(getApplicationContext(), admin_patrones_crud.class);
                     startActivity(intent);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Override
-            protected Map<String,String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id", txtId_crear_patron.getText().toString());
-                parametros.put("nom", txtNom_crear_patron.getText().toString());
-                parametros.put("ape", txtApe_crear_patron.getText().toString());
-                parametros.put("tel", txtTel_crear_patron.getText().toString());
-                parametros.put("em", txtEm_crear_patron.getText().toString());
-                parametros.put("res", txtRes_crear_patron.getText().toString());
-                parametros.put("us", txtUs_crear_patron.getText().toString());
-                parametros.put("pas", txtPas_crear_patron.getText().toString());
-                return parametros;
-            }
-        };
-        requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_SHORT).show();
+                }
+            }){
+                @Override
+                protected Map<String,String> getParams() throws AuthFailureError {
+                    Map<String,String> parametros = new HashMap<String,String>();
+                    parametros.put("id", txtId_crear_patron.getText().toString());
+                    parametros.put("nom", txtNom_crear_patron.getText().toString());
+                    parametros.put("ape", txtApe_crear_patron.getText().toString());
+                    parametros.put("tel", txtTel_crear_patron.getText().toString());
+                    parametros.put("em", txtEm_crear_patron.getText().toString());
+                    parametros.put("res", txtRes_crear_patron.getText().toString());
+                    parametros.put("us", txtUs_crear_patron.getText().toString());
+                    parametros.put("pas", txtPas_crear_patron.getText().toString());
+                    return parametros;
+                }
+            };
+            requestQueue= Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+        }
     }
 
     @Override

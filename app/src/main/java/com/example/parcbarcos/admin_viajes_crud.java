@@ -97,7 +97,7 @@ public class admin_viajes_crud extends AppCompatActivity {
                         if(object.getString("id_estado_viaje").equals("1")){
                             id_estado_vi = "Estado: Activo";
                         }else{
-                            id_estado_vi = "Estado: Inactivo";
+                            id_estado_vi = "Estado: Eliminado";
                         }
 
                         viajes = new class_admin_viajes(id_vi, dest_vi, fechSal_vi, fechLleg_vi, idBar_vi, idPat_vi, idSoc_vi,id_estado_vi);

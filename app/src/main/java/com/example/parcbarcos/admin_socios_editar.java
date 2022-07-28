@@ -59,44 +59,54 @@ public class admin_socios_editar extends AppCompatActivity {
     }
 
     public void updateAdminSocios(View view){
-        //String urlupdate="http://192.168.1.1/crud_club_barcos/admin/socios/update.php";
-        String urlupdate="http://192.168.0.12/crud_club_barcos/admin/socios/update.php";
-        final  String nom=editNom_admin_update_socio.getText().toString().trim();
-        final  String ape=editApe_admin_update_socio.getText().toString().trim();
-        final  String tel=editTel_admin_update_socio.getText().toString().trim();
-        final  String em=editEm_admin_update_socio.getText().toString().trim();
+        if(editNom_admin_update_socio.getText().toString().isEmpty()){
+            editNom_admin_update_socio.setError("Digite el nombre");
+        }else if(editApe_admin_update_socio.getText().toString().isEmpty()){
+            editApe_admin_update_socio.setError("Digite el apellido");
+        }else if(editTel_admin_update_socio.getText().toString().isEmpty()){
+            editTel_admin_update_socio.setError("Digite el telefono");
+        }else if(editEm_admin_update_socio.getText().toString().isEmpty()){
+            editEm_admin_update_socio.setError("Digite el email");
+        }else{
+            //String urlupdate="http://192.168.1.1/crud_club_barcos/admin/socios/update.php";
+            String urlupdate="http://192.168.0.12/crud_club_barcos/admin/socios/update.php";
+            final  String nom=editNom_admin_update_socio.getText().toString().trim();
+            final  String ape=editApe_admin_update_socio.getText().toString().trim();
+            final  String tel=editTel_admin_update_socio.getText().toString().trim();
+            final  String em=editEm_admin_update_socio.getText().toString().trim();
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Actualizando");
-        progressDialog.dismiss();
+            final ProgressDialog progressDialog = new ProgressDialog(this);
+            progressDialog.setMessage("Actualizando");
+            progressDialog.dismiss();
 
-        StringRequest request = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(admin_socios_editar.this,response , Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), admin_socios_crud.class));
-                finish();
-                progressDialog.dismiss();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(admin_socios_editar.this, error.getMessage() , Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id", admin_socios_crud.class_admin_sociosArrayList.get(position).getId_socio());
-                parametros.put("nom", nom);
-                parametros.put("ape", ape);
-                parametros.put("tel", tel);
-                parametros.put("em", em);
-                return parametros;
-            }
-        };
-        requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(request);
+            StringRequest request = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Toast.makeText(admin_socios_editar.this,response , Toast.LENGTH_SHORT).show();
+                    startActivity(new Intent(getApplicationContext(), admin_socios_crud.class));
+                    finish();
+                    progressDialog.dismiss();
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(admin_socios_editar.this, error.getMessage() , Toast.LENGTH_SHORT).show();
+                }
+            }){
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> parametros = new HashMap<String,String>();
+                    parametros.put("id", admin_socios_crud.class_admin_sociosArrayList.get(position).getId_socio());
+                    parametros.put("nom", nom);
+                    parametros.put("ape", ape);
+                    parametros.put("tel", tel);
+                    parametros.put("em", em);
+                    return parametros;
+                }
+            };
+            requestQueue= Volley.newRequestQueue(this);
+            requestQueue.add(request);
+        }
     }
 }

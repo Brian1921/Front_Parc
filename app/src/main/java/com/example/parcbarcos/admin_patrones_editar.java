@@ -58,44 +58,54 @@ public class admin_patrones_editar extends AppCompatActivity {
     }
 
     public void updateAdminPatrones(View view){
-        //String urlupdate="http://192.168.1.1/crud_club_barcos/admin/socios/update.php";
-        String urlupdate="http://192.168.0.12/crud_club_barcos/admin/patrones/update.php";
-        final  String nom=editNom_admin_update_patron.getText().toString().trim();
-        final  String ape=editApe_admin_update_patron.getText().toString().trim();
-        final  String tel=editTel_admin_update_patron.getText().toString().trim();
-        final  String em=editEm_admin_update_patron.getText().toString().trim();
+        if(editNom_admin_update_patron.getText().toString().isEmpty()){
+            editNom_admin_update_patron.setError("Digite el id");
+        }else if(editApe_admin_update_patron.getText().toString().isEmpty()){
+            editApe_admin_update_patron.setError("Digite el id");
+        }else if(editTel_admin_update_patron.getText().toString().isEmpty()) {
+            editTel_admin_update_patron.setError("Digite el id");
+        }else if(editEm_admin_update_patron.getText().toString().isEmpty()) {
+            editEm_admin_update_patron.setError("Digite el id");
+        }else{
+                //String urlupdate="http://192.168.1.1/crud_club_barcos/admin/socios/update.php";
+                String urlupdate="http://192.168.0.12/crud_club_barcos/admin/patrones/update.php";
+                final  String nom=editNom_admin_update_patron.getText().toString().trim();
+                final  String ape=editApe_admin_update_patron.getText().toString().trim();
+                final  String tel=editTel_admin_update_patron.getText().toString().trim();
+                final  String em=editEm_admin_update_patron.getText().toString().trim();
 
-        final ProgressDialog progressDialog = new ProgressDialog(this);
-        progressDialog.setMessage("Actualizando");
-        progressDialog.dismiss();
-
-        StringRequest request = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(admin_patrones_editar.this,response , Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(getApplicationContext(), admin_patrones_crud.class));
-                finish();
+                final ProgressDialog progressDialog = new ProgressDialog(this);
+                progressDialog.setMessage("Actualizando");
                 progressDialog.dismiss();
+
+                StringRequest request = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        Toast.makeText(admin_patrones_editar.this,response , Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(getApplicationContext(), admin_patrones_crud.class));
+                        finish();
+                        progressDialog.dismiss();
+                    }
+                }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(admin_patrones_editar.this, error.getMessage() , Toast.LENGTH_SHORT).show();
+                    }
+                }){
+                    @Nullable
+                    @Override
+                    protected Map<String, String> getParams() throws AuthFailureError {
+                        Map<String,String> parametros = new HashMap<String,String>();
+                        parametros.put("id", admin_patrones_crud.class_admin_patronesArrayList.get(position).getId_patron());
+                        parametros.put("nom", nom);
+                        parametros.put("ape", ape);
+                        parametros.put("tel", tel);
+                        parametros.put("em", em);
+                        return parametros;
+                    }
+                };
+                requestQueue= Volley.newRequestQueue(this);
+                requestQueue.add(request);
             }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(admin_patrones_editar.this, error.getMessage() , Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id", admin_patrones_crud.class_admin_patronesArrayList.get(position).getId_patron());
-                parametros.put("nom", nom);
-                parametros.put("ape", ape);
-                parametros.put("tel", tel);
-                parametros.put("em", em);
-                return parametros;
-            }
-        };
-        requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(request);
     }
 }
