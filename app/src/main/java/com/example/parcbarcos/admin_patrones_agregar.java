@@ -45,7 +45,7 @@ public class admin_patrones_agregar extends AppCompatActivity implements View.On
         btnCrear_patron.setOnClickListener(this::onClick);
     }
 
-    private void insertarSocioAdmin(String url) {
+    private void insertarPatronAdmin(String url) {
         StringRequest stringRequest = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -83,7 +83,7 @@ public class admin_patrones_agregar extends AppCompatActivity implements View.On
         int id= view.getId();
         if(id==R.id.btnAgregar_admin_patron){
             //insertarSocioAdmin("http://192.168.1.1/crud_club_barcos/admin/socios/update.php");
-            insertarSocioAdmin("http://192.168.0.12/crud_club_barcos/admin/patrones/insert.php");
+            insertarPatronAdmin("http://192.168.0.12/crud_club_barcos/admin/patrones/insert.php");
         }
 
     }

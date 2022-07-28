@@ -7,18 +7,20 @@ public class class_admin_viajes {
     private String destino;
     private String id_barco;
     private String id_patron;
+    private String id_socio;
     private String id_estado_viaje;
 
     public class_admin_viajes() {
     }
 
-    public class_admin_viajes(String id_viaje, String destino, String fecha_salida, String fecha_llegada, String id_barco, String id_patron, String id_estado_viaje) {
+    public class_admin_viajes(String id_viaje, String destino, String fecha_salida, String fecha_llegada, String id_barco, String id_patron,String id_socio, String id_estado_viaje) {
         this.id_viaje = id_viaje;
         this.fecha_salida = fecha_salida;
         this.fecha_llegada = fecha_llegada;
         this.destino = destino;
         this.id_barco = id_barco;
         this.id_patron = id_patron;
+        this.id_socio= id_socio;
         this.id_estado_viaje = id_estado_viaje;
     }
 
@@ -76,5 +78,13 @@ public class class_admin_viajes {
 
     public void setId_estado_viaje(String id_estado_viaje) {
         this.id_estado_viaje = id_estado_viaje;
+    }
+
+    public String getId_socio() {
+        return id_socio;
+    }
+
+    public void setId_socio(String id_socio) {
+        this.id_socio = id_socio;
     }
 }
