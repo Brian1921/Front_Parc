@@ -68,7 +68,7 @@ public class admin_patrones_editar extends AppCompatActivity {
             editEm_admin_update_patron.setError("Digite el id");
         }else{
                 //String urlupdate="http://192.168.1.1/crud_club_barcos/admin/socios/update.php";
-                String urlupdate="http://192.168.0.12/crud_club_barcos/admin/patrones/update.php";
+                String urlupdate="http://192.168.103.70/crud_club_barcos/admin/patrones/update.php";
                 final  String nom=editNom_admin_update_patron.getText().toString().trim();
                 final  String ape=editApe_admin_update_patron.getText().toString().trim();
                 final  String tel=editTel_admin_update_patron.getText().toString().trim();

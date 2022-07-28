@@ -46,7 +46,7 @@ public class restablecerPass extends AppCompatActivity {
         }
     }
     public void recuperarPassword(View view){
-        String urlupdate="http://192.168.0.12/crud_club_barcos/inicio_sesion/recuperar.php";
+        String urlupdate="http://192.168.103.70/crud_club_barcos/inicio_sesion/recuperar.php";
         //String urlupdate="http://192.168.1.1/crud_club_barcos/inicio_sesion/recuperar.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {

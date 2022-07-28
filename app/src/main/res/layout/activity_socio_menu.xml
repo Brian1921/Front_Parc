@@ -1,12 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".admin_menu"
-    android:background="#03052E">
+    android:background="#03052E"
+    tools:context=".socio_menu">
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="113dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/bordes"
+        android:text="BARCOS"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/group_2" />
 
     <RelativeLayout
         android:id="@+id/group_2"
@@ -42,70 +52,36 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/btnAdminUsu"
+        android:id="@+id/btnSocioViajes"
         android:layout_width="113dp"
         android:layout_height="45dp"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/bordes"
-        android:text="USUARIOS"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdminViajes" />
-
-    <Button
-        android:id="@+id/btnAdminPatrones"
-        android:layout_width="113dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/bordes"
-        android:text="PATRONES"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdminSocios" />
-
-    <Button
-        android:id="@+id/btnAdminSocios"
-        android:layout_width="113dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="80dp"
-        android:background="@drawable/bordes"
-        android:text="SOCIOS"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/group_2" />
-
-    <Button
-        android:id="@+id/btnAdminBarcos"
-        android:layout_width="113dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/bordes"
-        android:text="BARCOS"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdminPatrones" />
-
-    <Button
-        android:id="@+id/btnAdminViajes"
-        android:layout_width="113dp"
-        android:layout_height="45dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="15dp"
         android:background="@drawable/bordes"
         android:text="VIAJES"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnAdminBarcos" />
+        app:layout_constraintTop_toBottomOf="@+id/button" />
 
     <Button
-        android:id="@+id/btnAdminSalir"
+        android:id="@+id/btnSocioPatrones"
+        android:layout_width="113dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:text="PATRONES"
+        android:background="@drawable/bordes"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnSocioViajes" />
+
+    <Button
+        android:id="@+id/btnSocioSalir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="240dp"
-        android:layout_marginTop="460dp"
+        android:layout_marginTop="384dp"
         android:background="@drawable/bordes"
-        android:text="Cerrar Sesión"
+        android:text="CERRAR SESION"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/group_2" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
