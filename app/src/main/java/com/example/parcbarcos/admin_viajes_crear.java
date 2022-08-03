@@ -115,7 +115,7 @@ public class admin_viajes_crear extends AppCompatActivity {
     private void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnAgregrar_admin_insert_viajes){
-            insertarViajeAdmin("http://192.168.103.70/crud_club_barcos/admin/viajes/insert.php");
+            insertarViajeAdmin(getResources().getString(R.string.ip)+"crud_club_barcos/admin/viajes/insert.php");
         }
 
         if(id==R.id.editFS_admin_insert_viajes){
