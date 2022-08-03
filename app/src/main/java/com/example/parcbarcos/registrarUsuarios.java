@@ -25,9 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class registrarUsuarios extends AppCompatActivity {
-    Spinner spinUsuarios;
-    String rol;
-
     EditText txtId_crear_usuario, txtNom_crear_usuario, txtApe_crear_usuario, txtTel_crear_usuario, txtEm_crear_usuario, txtRes_crear_usuario, txtUs_crear_usuario, txtPas_crear_socio;
     RequestQueue requestQueue;
     Button btnCrear_usuario;
@@ -37,8 +34,6 @@ public class registrarUsuarios extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrar_usuarios);
 
-        spinUsuarios = (Spinner) findViewById(R.id.spinUsu);
-
         txtId_crear_usuario=findViewById(R.id.edtIdUsu);
         txtNom_crear_usuario=findViewById(R.id.edtNomUsuo);
         txtApe_crear_usuario=findViewById(R.id.edtApeUsu);
@@ -47,42 +42,18 @@ public class registrarUsuarios extends AppCompatActivity {
         txtRes_crear_usuario=findViewById(R.id.edtResUsu);
         txtUs_crear_usuario=findViewById(R.id.edtNickUsu);
         txtPas_crear_socio=findViewById(R.id.edtPassUsu);
-        ArrayList<String> roles = new ArrayList<String>();
         btnCrear_usuario=findViewById(R.id.btnAgregarUsu);
 
         btnCrear_usuario.setOnClickListener(this::onClick);
 
-        roles.add("SOCIO");
-        roles.add("PATRÓN");
-        ArrayAdapter adp = new ArrayAdapter(registrarUsuarios.this, R.layout.spinner_per, roles);
-        spinUsuarios.setAdapter(adp);
-
-        spinUsuarios.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                rol = (String) spinUsuarios.getAdapter().getItem(position);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-            }
-        });
     }
 
     private void onClick(View view) {
-        /*int id= view.getId();
+        int id= view.getId();
         if(id==R.id.btnAgregarUsu){
-            if(rol.equals("SOCIO")){
-                //insertarSocioAdmin("http://192.168.1.1/crud_club_barcos/admin/socios/insert.php");
-                insertarUsu("http://10.28.85.231/crud_club_barcos/admin/socios/insert.php");
-            }else{
-                insertarUsu("http://10.28.85.231/crud_club_barcos/admin/patrones/insert.php");
-            }
-
-        }*/
-
+            insertarUsu("http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/inicio_sesion/new_user.php");
+        }
     }
-
 
     private void insertarUsu(String url){
 
@@ -108,7 +79,7 @@ public class registrarUsuarios extends AppCompatActivity {
                 public void onResponse(String response) {
                     Toast.makeText(getApplicationContext(), "Usuario creado correctamente ", Toast.LENGTH_SHORT).show();
                     finish();
-                    Intent intent = new Intent(getApplicationContext(), admin_socios_crud.class);
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                 }
             }, new Response.ErrorListener() {

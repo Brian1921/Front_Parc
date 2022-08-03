@@ -177,7 +177,7 @@
                     android:layout_alignParentEnd="true"
                     android:layout_marginTop="58dp"
                     android:layout_marginEnd="152dp"
-                    android:text="¿No te has registrad?"
+                    android:text="¿No te has registrado?"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
