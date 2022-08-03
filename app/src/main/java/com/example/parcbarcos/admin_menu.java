@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 
 public class admin_menu extends AppCompatActivity {
-    Button adminSocios, adminPatrones, adminViajes;
+    Button adminSocios, adminPatrones, adminViajes, adminCerrarSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,6 +24,9 @@ public class admin_menu extends AppCompatActivity {
         adminViajes= (Button) findViewById(R.id.btnAdminViajes);
         adminViajes.setOnClickListener(this::onClick);
 
+        adminCerrarSesion= (Button) findViewById(R.id.btnAdminSalir);
+        adminCerrarSesion.setOnClickListener(this::onClick);
+
     }
 
     private void onClick(View view) {
@@ -38,6 +41,11 @@ public class admin_menu extends AppCompatActivity {
         }
         if(id==R.id.btnAdminViajes){
             Intent intent = new Intent(admin_menu.this, admin_viajes_crud.class);
+            startActivity(intent);
+        }
+        if(id==R.id.btnAdminSalir){
+            Intent intent = new Intent(admin_menu.this, MainActivity.class);
+            finish();
             startActivity(intent);
         }
     }
