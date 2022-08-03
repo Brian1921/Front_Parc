@@ -70,7 +70,7 @@ public class registrarUsuarios extends AppCompatActivity {
     }
 
     private void onClick(View view) {
-        int id= view.getId();
+        /*int id= view.getId();
         if(id==R.id.btnAgregarUsu){
             if(rol.equals("SOCIO")){
                 //insertarSocioAdmin("http://192.168.1.1/crud_club_barcos/admin/socios/insert.php");
@@ -79,7 +79,7 @@ public class registrarUsuarios extends AppCompatActivity {
                 insertarUsu("http://10.28.85.231/crud_club_barcos/admin/patrones/insert.php");
             }
 
-        }
+        }*/
 
     }
 

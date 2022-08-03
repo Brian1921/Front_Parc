@@ -133,7 +133,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnIngresar){
-            validarUsuario(getResources().getString(R.string.ip)+"crud_club_barcos/inicio_sesion/validar.php");
+            validarUsuario("http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/inicio_sesion/validar.php");
 
 
         }

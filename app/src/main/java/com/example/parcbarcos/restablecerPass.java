@@ -46,7 +46,7 @@ public class restablecerPass extends AppCompatActivity {
         }
     }
     public void recuperarPassword(View view){
-        String urlupdate=getResources().getString(R.string.ip)+"crud_club_barcos/inicio_sesion/recuperar.php";
+        String urlupdate="http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/inicio_sesion/recuperar.php";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
             @Override

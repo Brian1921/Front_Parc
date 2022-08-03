@@ -99,7 +99,7 @@ public class admin_patrones_agregar extends AppCompatActivity implements View.On
     @Override
     public void onClick(View view) {
         int id= view.getId();
-        String url=getResources().getString(R.string.ip)+"crud_club_barcos/admin/patrones/insert.php";
+        String url="http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/admin/patrones/insert.php";
         if(id==R.id.btnAgregar_admin_patron){
             insertarPatronAdmin(url);
         }
