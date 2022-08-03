@@ -131,7 +131,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="140dp"
+                android:layout_height="192dp"
                 android:layout_marginTop="100dp"
                 app:layout_constraintTop_toBottomOf="@+id/spnUsuarios">
 
@@ -165,6 +165,19 @@
                     android:layout_marginLeft="20dp"
                     android:layout_marginTop="65dp"
                     android:text="¿Olvidó su contraseña?"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/txtRegisUsu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:layout_below="@+id/textView29"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="58dp"
+                    android:layout_marginEnd="152dp"
+                    android:text="¿No te has registrad?"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 

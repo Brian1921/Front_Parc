@@ -11,6 +11,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText editTextTextPersonName,editTextTextPassword;
     Button btnIngresar, btnInicio_recuperar;
     RequestQueue requestQueue;
-
+    TextView edtRegisUsu;
 
 
     @Override
@@ -40,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        edtRegisUsu=findViewById(R.id.txtRegisUsu);
+        edtRegisUsu.setOnClickListener(this::onClick);
         editTextTextPersonName=findViewById(R.id.txtUsuario);
         editTextTextPassword=findViewById(R.id.txtPass);
 
@@ -136,6 +139,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if(id==R.id.btnInicio_recuperar){
             Intent intent = new Intent(getApplicationContext(), restablecerPass.class);
+            startActivity(intent);
+        }
+        if (id == R.id.txtRegisUsu) {
+            Intent intent = new Intent(getApplicationContext(), registrarUsuarios.class);
             startActivity(intent);
         }
     }
