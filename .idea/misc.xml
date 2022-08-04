@@ -25,7 +25,8 @@
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_socios_agregar.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_socios_crud.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_socios_editar.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_viajes_editar.xml" value="0.24728260869565216" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_viajes_crear.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_viajes_editar.xml" value="0.25" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_main.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_recuperar_pass.xml" value="0.24728260869565216" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_reestablecer_pass.xml" value="0.264" />
