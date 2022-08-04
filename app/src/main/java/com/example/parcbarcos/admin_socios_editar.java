@@ -66,7 +66,6 @@ public class admin_socios_editar extends AppCompatActivity {
 
         });
 
-
         Intent intent=getIntent();
         position=intent.getExtras().getInt("position");
 

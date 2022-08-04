@@ -37,7 +37,6 @@ public class admin_patrones_editar extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_patrones_editar);
-
         editNom_admin_update_patron = findViewById(R.id.editNom_admin_update_patron);
         editApe_admin_update_patron = findViewById(R.id.editApe_admin_update_patron);
         editTel_admin_update_patron = findViewById(R.id.editTel_admin_update_patron);
@@ -75,6 +74,7 @@ public class admin_patrones_editar extends AppCompatActivity {
         editTel_admin_update_patron.setText(admin_patrones_crud.class_admin_patronesArrayList.get(position).getTel_patron());
         editEm_admin_update_patron.setText(admin_patrones_crud.class_admin_patronesArrayList.get(position).getEm_patron());
     }
+
     private void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnEditar_admin_patron){
@@ -89,8 +89,6 @@ public class admin_patrones_editar extends AppCompatActivity {
             editApe_admin_update_patron.setError("Digite el apellido");
         }else if(editTel_admin_update_patron.getText().toString().isEmpty()){
             editTel_admin_update_patron.setError("Digite el telefono");
-        }else if(Integer.parseInt(editTel_admin_update_patron.getText().toString())<=0 ){
-            editTel_admin_update_patron.setError("Numero Invalido");
         }else if(editEm_admin_update_patron.getText().toString().isEmpty()){
             editEm_admin_update_patron.setError("Digite el email");
         }else if(ValidarEmail(editEm_admin_update_patron.getText().toString())==false){
