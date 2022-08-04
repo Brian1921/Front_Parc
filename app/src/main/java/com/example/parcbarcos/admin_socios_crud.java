@@ -34,8 +34,7 @@ public class admin_socios_crud extends AppCompatActivity {
     Adapter_class_admin_socios adapter1;
 
     public static ArrayList<class_admin_socios> class_admin_sociosArrayList = new ArrayList<>();
-    //String url="http://192.168.103.70/crud_club_barcos/admin/socios/read.php";
-    String url="http://192.168.1.3/crud_club_barcos/admin/socios/read.php";
+
 
     class_admin_socios socios;
     RequestQueue requestQueue;
@@ -79,6 +78,7 @@ public class admin_socios_crud extends AppCompatActivity {
     }
 
     private void listarSociosAdmin() {
+        String url="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/socios/read.php";
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
@@ -133,7 +133,6 @@ public class admin_socios_crud extends AppCompatActivity {
 
     public void eliminarAdminSocio(String id){
         String urlel="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/socios/delete.php";
-        //String urlel="http://192.168.103.70/crud_club_barcos/admin/socios/delete.php";
         StringRequest request = new StringRequest(Request.Method.POST, urlel, new Response.Listener<String>() {
 
             @Override

@@ -130,7 +130,7 @@ public class admin_patrones_agregar extends AppCompatActivity implements View.On
         int id= view.getId();
         if(id==R.id.btnAgregar_admin_patron){
             insertarPatronAdmin("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/patrones/insert.php");
-            //insertarPatronAdmin("http://192.168.103.70/crud_club_barcos/admin/patrones/insert.php");
+
         }
 
     }

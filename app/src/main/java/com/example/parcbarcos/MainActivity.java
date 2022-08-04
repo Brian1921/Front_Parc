@@ -134,7 +134,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         int id= view.getId();
         if(id==R.id.btnIngresar){
             validarUsuario("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/inicio_sesion/validar.php");
-            //validarUsuario("http://192.168.103.70/crud_club_barcos/inicio_sesion/validar.php");
         }
         if(id==R.id.txtRecuPass){
             Intent intent = new Intent(getApplicationContext(), restablecerPass.class);

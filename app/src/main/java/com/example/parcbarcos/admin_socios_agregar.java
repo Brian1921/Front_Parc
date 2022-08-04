@@ -50,12 +50,10 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
         txtTel_crear_socio.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
             }
 
             @Override
@@ -67,10 +65,7 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
             }
 
         });
-
     }
-
-
 
     private void insertarSocioAdmin(String url){
 
@@ -133,7 +128,6 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
         int id= view.getId();
         if(id==R.id.btnAgregar_admin_socio){
             insertarSocioAdmin("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/socios/insert.php");
-            ///insertarSocioAdmin("http://192.168.103.70/crud_club_barcos/admin/socios/insert.php");
         }
 
     }

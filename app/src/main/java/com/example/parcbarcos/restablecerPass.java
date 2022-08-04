@@ -53,7 +53,6 @@ public class restablecerPass extends AppCompatActivity {
         }else if (editRes.getText().toString().isEmpty()){
             editRes.setError("Digite la respuesta");
         }else{
-            //String urlupdate="http://192.168.103.70/crud_club_barcos/inicio_sesion/recuperar.php";
             String urlupdate="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/inicio_sesion/recuperar.php";
 
             StringRequest stringRequest = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {

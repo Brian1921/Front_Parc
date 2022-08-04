@@ -96,8 +96,7 @@ public class admin_patrones_editar extends AppCompatActivity {
         }else if(ValidarEmail(editEm_admin_update_patron.getText().toString())==false){
             editEm_admin_update_patron.setError("Email invalido");
         }else{
-                //String urlupdate="http://192.168.1.3/crud_club_barcos/admin/patrones/update.php";
-                String urlupdate="http://192.168.1.3/crud_club_barcos/admin/patrones/update.php";
+                String urlupdate="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/patrones/update.php";
                 final  String nom=editNom_admin_update_patron.getText().toString().trim();
                 final  String ape=editApe_admin_update_patron.getText().toString().trim();
                 final  String tel=editTel_admin_update_patron.getText().toString().trim();

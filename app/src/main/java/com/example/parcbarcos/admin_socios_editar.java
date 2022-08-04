@@ -98,7 +98,6 @@ public class admin_socios_editar extends AppCompatActivity {
             editEm_admin_update_socio.setError("Email invalido");
         }else{
             String urlupdate="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/socios/update.php";
-            //String urlupdate="http://192.168.103.70/crud_club_barcos/admin/socios/update.php";
             final  String nom=editNom_admin_update_socio.getText().toString().trim();
             final  String ape=editApe_admin_update_socio.getText().toString().trim();
             final  String tel=editTel_admin_update_socio.getText().toString().trim();
