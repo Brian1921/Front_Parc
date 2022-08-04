@@ -6,6 +6,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,6 +23,8 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class admin_socios_editar extends AppCompatActivity {
 
@@ -40,6 +44,27 @@ public class admin_socios_editar extends AppCompatActivity {
 
         btnEditar_admin_socio=findViewById(R.id.btnEditar_admin_socio);
         btnEditar_admin_socio.setOnClickListener(this::onClick);
+
+        editTel_admin_update_socio.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String x = editable.toString();
+                if(editTel_admin_update_socio.getText().toString().length()<7){
+                    editTel_admin_update_socio.setError("Lonqitud insuficiente");
+                }
+            }
+
+        });
 
 
         Intent intent=getIntent();
@@ -65,10 +90,15 @@ public class admin_socios_editar extends AppCompatActivity {
             editApe_admin_update_socio.setError("Digite el apellido");
         }else if(editTel_admin_update_socio.getText().toString().isEmpty()){
             editTel_admin_update_socio.setError("Digite el telefono");
+        }else if(Integer.parseInt(editTel_admin_update_socio.getText().toString())<=0 ){
+            editTel_admin_update_socio.setError("Numero Invalido");
         }else if(editEm_admin_update_socio.getText().toString().isEmpty()){
             editEm_admin_update_socio.setError("Digite el email");
+        }else if(ValidarEmail(editEm_admin_update_socio.getText().toString())==false){
+            editEm_admin_update_socio.setError("Email invalido");
         }else{
-            String urlupdate="http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/admin/socios/update.php";
+            String urlupdate="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/socios/update.php";
+            //String urlupdate="http://192.168.103.70/crud_club_barcos/admin/socios/update.php";
             final  String nom=editNom_admin_update_socio.getText().toString().trim();
             final  String ape=editApe_admin_update_socio.getText().toString().trim();
             final  String tel=editTel_admin_update_socio.getText().toString().trim();
@@ -107,5 +137,10 @@ public class admin_socios_editar extends AppCompatActivity {
             requestQueue= Volley.newRequestQueue(this);
             requestQueue.add(request);
         }
+    }
+    public boolean ValidarEmail (String email){
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mather = pattern.matcher(email);
+        return  mather.find();
     }
 }

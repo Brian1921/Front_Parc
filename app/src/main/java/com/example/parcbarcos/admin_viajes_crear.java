@@ -25,6 +25,8 @@ import com.android.volley.toolbox.Volley;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class admin_viajes_crear extends AppCompatActivity {
     EditText editId_admin_isert_viajes, editFS_admin_insert_viajes, editFL_admin_insert_viajes,editDestino_admin_isert_viajes,editId_barco_admin_insert_viajes,
@@ -60,6 +62,8 @@ public class admin_viajes_crear extends AppCompatActivity {
         btnAgregrar_admin_insert_viajes.setOnClickListener(this::onClick);
         editFS_admin_insert_viajes.setOnClickListener(this::onClick);
         editFL_admin_insert_viajes.setOnClickListener(this::onClick);
+
+
 
     }
 
@@ -115,7 +119,8 @@ public class admin_viajes_crear extends AppCompatActivity {
     private void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnAgregrar_admin_insert_viajes){
-            insertarViajeAdmin("http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/admin/viajes/insert.php");
+            //insertarViajeAdmin("http://192.168.103.70/crud_club_barcos/admin/viajes/insert.php");
+            insertarViajeAdmin("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/viajes/insert.php");
         }
 
         if(id==R.id.editFS_admin_insert_viajes){
@@ -140,7 +145,8 @@ public class admin_viajes_crear extends AppCompatActivity {
             },year, month, day);
             datePickerDialog.show();
             }
-        }
+    }
+
 
 
 }

@@ -37,6 +37,9 @@
             android:name=".restablecerPass"
             android:exported="false" />
         <activity
+            android:name=".reestablecer_pass"
+            android:exported="false" />
+        <activity
             android:name=".admin_patrones_editar"
             android:exported="false" />
         <activity

@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -19,6 +21,8 @@ import com.android.volley.toolbox.Volley;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class admin_socios_agregar extends AppCompatActivity implements View.OnClickListener{
 
@@ -43,6 +47,27 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
         btnCrear_socio=findViewById(R.id.btnAgregar_admin_socio);
         btnCrear_socio.setOnClickListener(this::onClick);
 
+        txtTel_crear_socio.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String x = editable.toString();
+                if(txtTel_crear_socio.getText().toString().length()<7){
+                    txtTel_crear_socio.setError("Lonqitud insuficiente");
+                }
+            }
+
+        });
+
     }
 
 
@@ -57,8 +82,12 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
             txtApe_crear_socio.setError("Digite el apellido");
         }else if(txtTel_crear_socio.getText().toString().isEmpty()){
             txtTel_crear_socio.setError("Digite el telefono");
+        }else if(Integer.parseInt(txtTel_crear_socio.getText().toString())<=0 ){
+            txtTel_crear_socio.setError("Numero Invalido");
         }else if(txtEm_crear_socio.getText().toString().isEmpty()){
             txtEm_crear_socio.setError("Digite el email");
+        }else if(ValidarEmail(txtEm_crear_socio.getText().toString())==false){
+            txtEm_crear_socio.setError("Email invalido");
         }else if(txtRes_crear_socio.getText().toString().isEmpty()){
             txtRes_crear_socio.setError("Digite la respuesta de seguridad");
         }else if(txtUs_crear_socio.getText().toString().isEmpty()){
@@ -103,9 +132,14 @@ public class admin_socios_agregar extends AppCompatActivity implements View.OnCl
     public void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnAgregar_admin_socio){
-            //insertarSocioAdmin("http://192.168.1.1/crud_club_barcos/admin/socios/insert.php");
-            insertarSocioAdmin("http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/admin/socios/insert.php");
+            insertarSocioAdmin("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/socios/insert.php");
+            ///insertarSocioAdmin("http://192.168.103.70/crud_club_barcos/admin/socios/insert.php");
         }
 
+    }
+    public boolean ValidarEmail (String email){
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mather = pattern.matcher(email);
+        return  mather.find();
     }
 }

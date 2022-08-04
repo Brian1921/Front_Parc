@@ -18,7 +18,7 @@ public class admin_menu extends AppCompatActivity {
         adminSocios=(Button) findViewById(R.id.btnAdminSocios);
         adminSocios.setOnClickListener(this::onClick);
 
-        adminPatrones= (Button) findViewById(R.id.btnAdminPatrones);
+        adminPatrones = findViewById(R.id.btnAdminPat);
         adminPatrones.setOnClickListener(this::onClick);
 
         adminViajes= (Button) findViewById(R.id.btnAdminViajes);
@@ -35,10 +35,6 @@ public class admin_menu extends AppCompatActivity {
             Intent intent= new Intent(admin_menu.this, admin_socios_crud.class);
             startActivity(intent);
         }
-        if(id==R.id.btnAdminPatrones){
-            Intent intent = new Intent(admin_menu.this, admin_patrones_crud.class);
-            startActivity(intent);
-        }
         if(id==R.id.btnAdminViajes){
             Intent intent = new Intent(admin_menu.this, admin_viajes_crud.class);
             startActivity(intent);
@@ -46,6 +42,10 @@ public class admin_menu extends AppCompatActivity {
         if(id==R.id.btnAdminSalir){
             Intent intent = new Intent(admin_menu.this, MainActivity.class);
             finish();
+            startActivity(intent);
+        }
+        if(id==R.id.btnAdminPat){
+            Intent intent = new Intent(admin_menu.this, admin_patrones_crud.class);
             startActivity(intent);
         }
     }

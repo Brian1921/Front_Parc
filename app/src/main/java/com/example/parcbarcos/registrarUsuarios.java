@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -23,8 +25,13 @@ import com.android.volley.toolbox.Volley;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class registrarUsuarios extends AppCompatActivity {
+    Spinner spinUsuarios;
+    String rol;
+
     EditText txtId_crear_usuario, txtNom_crear_usuario, txtApe_crear_usuario, txtTel_crear_usuario, txtEm_crear_usuario, txtRes_crear_usuario, txtUs_crear_usuario, txtPas_crear_socio;
     RequestQueue requestQueue;
     Button btnCrear_usuario;
@@ -42,18 +49,39 @@ public class registrarUsuarios extends AppCompatActivity {
         txtRes_crear_usuario=findViewById(R.id.edtResUsu);
         txtUs_crear_usuario=findViewById(R.id.edtNickUsu);
         txtPas_crear_socio=findViewById(R.id.edtPassUsu);
+        ArrayList<String> roles = new ArrayList<String>();
         btnCrear_usuario=findViewById(R.id.btnAgregarUsu);
 
         btnCrear_usuario.setOnClickListener(this::onClick);
+        txtTel_crear_usuario.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                String x = editable.toString();
+                if(txtTel_crear_usuario.getText().toString().length()<7){
+                    txtTel_crear_usuario.setError("Lonqitud insuficiente");
+                }
+            }
+        });
     }
 
     private void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnAgregarUsu){
-            insertarUsu("http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/inicio_sesion/new_user.php");
+            insertarUsu("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/patrones/insert.php");
         }
+
     }
+
 
     private void insertarUsu(String url){
 
@@ -65,8 +93,12 @@ public class registrarUsuarios extends AppCompatActivity {
             txtApe_crear_usuario.setError("Digite el apellido");
         }else if(txtTel_crear_usuario.getText().toString().isEmpty()){
             txtTel_crear_usuario.setError("Digite el telefono");
+        }else if(Integer.parseInt(txtTel_crear_usuario.getText().toString())<=0 ){
+            txtTel_crear_usuario.setError("Numero Invalido");
         }else if(txtEm_crear_usuario.getText().toString().isEmpty()){
             txtEm_crear_usuario.setError("Digite el email");
+        }else if(ValidarEmail(txtEm_crear_usuario.getText().toString())==false){
+            txtEm_crear_usuario.setError("Email invalido");
         }else if(txtRes_crear_usuario.getText().toString().isEmpty()){
             txtRes_crear_usuario.setError("Digite la respuesta de seguridad");
         }else if(txtUs_crear_usuario.getText().toString().isEmpty()){
@@ -79,7 +111,7 @@ public class registrarUsuarios extends AppCompatActivity {
                 public void onResponse(String response) {
                     Toast.makeText(getApplicationContext(), "Usuario creado correctamente ", Toast.LENGTH_SHORT).show();
                     finish();
-                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    Intent intent = new Intent(getApplicationContext(), admin_socios_crud.class);
                     startActivity(intent);
                 }
             }, new Response.ErrorListener() {
@@ -105,6 +137,12 @@ public class registrarUsuarios extends AppCompatActivity {
             requestQueue= Volley.newRequestQueue(this);
             requestQueue.add(stringRequest);
         }
+    }
+
+    public boolean ValidarEmail (String email){
+        Pattern pattern = Pattern.compile("^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$");
+        Matcher mather = pattern.matcher(email);
+        return  mather.find();
     }
 
 

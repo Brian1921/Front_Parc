@@ -30,7 +30,8 @@ import java.util.Map;
 
 public class admin_viajes_crud extends AppCompatActivity {
 
-
+    String url="http://192.168.1.3/crud_club_barcos/admin/viajes/read.php";
+    //String url ="http://192.168.103.70/crud_club_barcos/admin/viajes/read.php";
     class_admin_viajes viajes;
     public static ArrayList<class_admin_viajes> class_admin_viajesArrayList = new ArrayList<>();
     ListView listView;
@@ -75,7 +76,6 @@ public class admin_viajes_crud extends AppCompatActivity {
     }
 
     private void listarViajesAdmin(){
-        String url ="http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/admin/viajes/read.php";
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
 
             @Override
@@ -125,7 +125,8 @@ public class admin_viajes_crud extends AppCompatActivity {
     }
 
     public void eliminarAdminViajes(String id){
-        String urlel="http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/admin/viajes/delete.php";
+        String urlel="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/viajes/delete.php";
+        //String urlel="http://192.168.103.70/crud_club_barcos/admin/viajes/delete.php";
         StringRequest request = new StringRequest(Request.Method.POST, urlel, new Response.Listener<String>() {
 
             @Override

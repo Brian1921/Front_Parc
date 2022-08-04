@@ -46,34 +46,45 @@ public class restablecerPass extends AppCompatActivity {
         }
     }
     public void recuperarPassword(View view){
-        String urlupdate="http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/inicio_sesion/recuperar.php";
+        if (editId.getText().toString().isEmpty()){
+            editId.setError("Digite el id");
+        }else if (editPass.getText().toString().isEmpty()){
+            editPass.setError("Digite la contraseña");
+        }else if (editRes.getText().toString().isEmpty()){
+            editRes.setError("Digite la respuesta");
+        }else{
+            //String urlupdate="http://192.168.103.70/crud_club_barcos/inicio_sesion/recuperar.php";
+            String urlupdate="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/inicio_sesion/recuperar.php";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                Toast.makeText(getApplicationContext(), "Contraseña recuperada correctamente", Toast.LENGTH_SHORT).show();
-                finish();
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Error, verifique los datos", Toast.LENGTH_SHORT).show();
-            }
-        }){
-            @Nullable
-            @Override
-            protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String,String> parametros = new HashMap<String,String>();
-                parametros.put("id", editId.getText().toString());
-                parametros.put("pass", editPass.getText().toString());
-                parametros.put("res", editRes.getText().toString());
-                return parametros;
+            StringRequest stringRequest = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Toast.makeText(getApplicationContext(), "Contraseña recuperada correctamente", Toast.LENGTH_SHORT).show();
+                    finish();
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+            }, new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(getApplicationContext(), "Error, verifique los datos", Toast.LENGTH_SHORT).show();
+                }
+            }){
+                @Nullable
+                @Override
+                protected Map<String, String> getParams() throws AuthFailureError {
+                    Map<String,String> parametros = new HashMap<String,String>();
+                    parametros.put("id", editId.getText().toString());
+                    parametros.put("pass", editPass.getText().toString());
+                    parametros.put("res", editRes.getText().toString());
+                    return parametros;
 
-            }
-        };
-        requestQueue= Volley.newRequestQueue(this);
-        requestQueue.add(stringRequest);
+                }
+            };
+            requestQueue= Volley.newRequestQueue(this);
+            requestQueue.add(stringRequest);
+        }
     }
+
+
 }

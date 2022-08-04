@@ -33,13 +33,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     EditText editTextTextPersonName,editTextTextPassword;
     Button btnIngresar, btnInicio_recuperar;
     RequestQueue requestQueue;
-    TextView edtRegisUsu;
+    TextView edtRegisUsu, txtRecuPass;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        txtRecuPass = findViewById(R.id.txtRecuPass);
+        txtRecuPass.setOnClickListener(this::onClick);
 
         edtRegisUsu=findViewById(R.id.txtRegisUsu);
         edtRegisUsu.setOnClickListener(this::onClick);
@@ -48,9 +51,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         btnIngresar = findViewById(R.id.btnIngresar);
         btnIngresar.setOnClickListener(this::onClick);
-
-        btnInicio_recuperar = findViewById(R.id.btnInicio_recuperar);
-        btnInicio_recuperar.setOnClickListener(this::onClick);
 
         spnUsuarios = (Spinner) findViewById(R.id.spnUsuarios);
 
@@ -133,11 +133,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         int id= view.getId();
         if(id==R.id.btnIngresar){
-            validarUsuario("http://"+getResources().getString(R.string.ip)+"/crud_club_barcos/inicio_sesion/validar.php");
-
-
+            validarUsuario("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/inicio_sesion/validar.php");
+            //validarUsuario("http://192.168.103.70/crud_club_barcos/inicio_sesion/validar.php");
         }
-        if(id==R.id.btnInicio_recuperar){
+        if(id==R.id.txtRecuPass){
             Intent intent = new Intent(getApplicationContext(), restablecerPass.class);
             startActivity(intent);
         }
