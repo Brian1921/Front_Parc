@@ -59,7 +59,7 @@ public class admin_viajes_crud extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i) {
                             case 0:
-                                //startActivity(new Intent(getApplicationContext(),admin_patrones_editar.class).putExtra("position", position));
+                                startActivity(new Intent(getApplicationContext(),admin_viajes_editar.class).putExtra("position", position));
                                 break;
                             case 1:
                                 eliminarAdminViajes(class_admin_viajesArrayList.get(position).getId_viaje());
