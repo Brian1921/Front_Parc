@@ -75,8 +75,8 @@ public class admin_usuarios_editar extends AppCompatActivity {
                 @Override
                 public void onResponse(String response) {
                     Toast.makeText(admin_usuarios_editar.this ,response , Toast.LENGTH_SHORT).show();
-                    startActivity(new Intent(getApplicationContext(), admin_usuarios_crud.class));
                     finish();
+                    startActivity(new Intent(getApplicationContext(), admin_usuarios_crud.class));
                     progressDialog.dismiss();
                 }
             }, new Response.ErrorListener() {
