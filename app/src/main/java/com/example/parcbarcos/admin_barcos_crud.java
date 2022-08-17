@@ -59,10 +59,10 @@ public class admin_barcos_crud extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i) {
                             case 0:
-                                startActivity(new Intent(getApplicationContext(), admin_patrones_editar.class).putExtra("position", position));
+                                startActivity(new Intent(getApplicationContext(), admin_barcos_editar.class).putExtra("position", position));
                                 break;
                             case 1:
-                                eliminarAdminPatrones(class_admin_barcosArrayList.get(position).getId_barco());
+                                //eliminarAdminPatrones(class_admin_barcosArrayList.get(position).getId_barco());
                                 break;
                         }
                     }
