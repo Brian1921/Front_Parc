@@ -19,6 +19,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".admin_usuarios_crud"
+            android:exported="false" />
+        <activity
             android:name=".admin_viajes_editar"
             android:exported="false" />
         <activity
