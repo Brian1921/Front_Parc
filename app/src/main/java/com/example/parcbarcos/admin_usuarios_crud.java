@@ -55,7 +55,7 @@ public class admin_usuarios_crud extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i) {
                             case 0:
-                                //startActivity(new Intent(getApplicationContext(), admin_usuarios_editar.class).putExtra("position", position));
+                                startActivity(new Intent(getApplicationContext(), admin_usuarios_editar.class).putExtra("position", position));
                                 break;
                         }
                     }

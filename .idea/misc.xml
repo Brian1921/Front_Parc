@@ -3,47 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/activity_admin_patrones_crud.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/activity_admin_socios_editar.xml" value="0.2" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/activity_admin_usuarios_crud.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/activity_admin_usuarios_editar.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/activity_registrar_usuarios.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/list_patrones.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/Front_Parc/app/src/main/res/layout/list_usuarios.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_patrones_agregar.xml" value="0.1" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_patrones_crud.xml" value="0.22" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_patrones_editar.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_socios.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_socios_agregar.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_socios_crud.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_socios_editar.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_viajes_crear.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_admin_viajes_crud.xml" value="0.2" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_registrar_usuarios.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/activity_restablecer_pass.xml" value="0.2" />
-        <entry key="..\:/Users/Equipo/Documents/Maleja/Maleja/Universidad/6 Semestre/parcBarcos/app/src/main/res/layout/spinner_per.xml" value="0.2" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/drawable/bordes.xml" value="0.237" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_menu.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_patrones_agregar.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_patrones_crud.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_patrones_editar.xml" value="0.25" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_socios_agregar.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_socios_crud.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_socios_editar.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_viajes_crear.xml" value="0.12158054711246201" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_viajes_editar.xml" value="0.25" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_main.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_recuperar_pass.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_reestablecer_pass.xml" value="0.264" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_restablecer_pass.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_patrones.xml" value="0.2" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_socios.xml" value="0.24728260869565216" />
-        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_viajes.xml" value="0.1" />
-        <entry key="..\:/Users/hecto/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_barcos_crud.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/hecto/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_barcos.xml" value="0.19583333333333333" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_menu.xml" value="0.10989583333333333" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_usuarios_crud.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_usuarios_editar.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_usuarios.xml" value="0.25" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_viajes.xml" value="0.25" />
       </map>
     </option>
   </component>

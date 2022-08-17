@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
+
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -26,45 +27,30 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class admin_usuarios_editar extends AppCompatActivity {
-    EditText editUsuario_admin_update_usuario;
+
+    EditText editUsuario;
     Button btnEditar_admin_usuario;
-    Spinner spnRoles;
     private int position;
-    String rol;
     RequestQueue requestQueue;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_usuarios_editar);
-        editUsuario_admin_update_usuario.findViewById(R.id.editUsuario_admin_update_usuario);
+        Toast.makeText(admin_usuarios_editar.this, admin_usuarios_crud.class_admin_usuariosArrayList.get(position).getUsuario() , Toast.LENGTH_SHORT).show();
 
-        btnEditar_admin_usuario.findViewById(R.id.btnEditar_admin_usuario);
+        editUsuario=findViewById(R.id.editUsuario_admin_update_usuario);
+
+        btnEditar_admin_usuario=findViewById(R.id.btnEditar_admin_usuario);
         btnEditar_admin_usuario.setOnClickListener(this::Onclick);
 
         Intent intent=getIntent();
         position=intent.getExtras().getInt("position");
 
-        editUsuario_admin_update_usuario.setText(admin_usuarios_crud.class_admin_usuariosArrayList.get(position).getUsuario());
+        editUsuario.setText(admin_usuarios_crud.class_admin_usuariosArrayList.get(position).getUsuario());
 
-        ArrayList<String> roles = new ArrayList<String>();
-
-        roles.add("SOCIO");
-        roles.add("PATRÓN");
-        ArrayAdapter adp = new ArrayAdapter(admin_usuarios_editar.this, R.layout.spinner_per,roles);
-        spnRoles.setAdapter(adp);
-
-        spnRoles.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                rol = (String) spnRoles.getAdapter().getItem(position);
-            }
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
     }
 
 
@@ -76,12 +62,11 @@ public class admin_usuarios_editar extends AppCompatActivity {
     }
 
     private void updateAdminUsuarios(View view) {
-        if(editUsuario_admin_update_usuario.getText().toString().isEmpty()){
-            editUsuario_admin_update_usuario.setError("Digite el nombre");
+        if(editUsuario.getText().toString().isEmpty()){
+            editUsuario.setError("Digite el nombre");
         }else{
             String urlupdate="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/usuarios/update.php";
-            final  String usuario=editUsuario_admin_update_usuario.getText().toString().trim();
-            final String des_rol=rol;
+            final  String usuario=editUsuario.getText().toString().trim();
             final ProgressDialog progressDialog = new ProgressDialog(this);
             progressDialog.setMessage("Actualizando");
             progressDialog.dismiss();
@@ -89,7 +74,7 @@ public class admin_usuarios_editar extends AppCompatActivity {
             StringRequest request = new StringRequest(Request.Method.POST, urlupdate, new Response.Listener<String>() {
                 @Override
                 public void onResponse(String response) {
-                    Toast.makeText(admin_usuarios_editar.this,response , Toast.LENGTH_SHORT).show();
+                    Toast.makeText(admin_usuarios_editar.this ,response , Toast.LENGTH_SHORT).show();
                     startActivity(new Intent(getApplicationContext(), admin_usuarios_crud.class));
                     finish();
                     progressDialog.dismiss();
@@ -106,7 +91,6 @@ public class admin_usuarios_editar extends AppCompatActivity {
                     Map<String,String> parametros = new HashMap<String,String>();
                     parametros.put("id", admin_usuarios_crud.class_admin_usuariosArrayList.get(position).getId_usuario());
                     parametros.put("usuario", usuario);
-                    parametros.put("des_rol",des_rol);
 
                     return parametros;
                 }
