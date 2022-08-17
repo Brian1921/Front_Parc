@@ -54,30 +54,38 @@
         app:layout_constraintTop_toBottomOf="@+id/group_2"
         tools:ignore="MissingConstraints" />
 
+    <EditText
+        android:id="@+id/editUsuario_admin_update_usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:hint="Editar Usuario"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textColorHint="#CCD1D1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView15"
+        tools:ignore="MissingConstraints" />
+
     <Button
         android:id="@+id/btnEditar_admin_usuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="162dp"
+        android:layout_marginTop="50dp"
         android:layout_marginEnd="162dp"
-        android:backgroundTint="#D9D9D9"
-        android:text="Editar"
         android:textColor="#03052E"
+        android:text="Editar"
+        android:backgroundTint="#D9D9D9"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="314dp" />
-
-    <EditText
-        android:id="@+id/editUsuario_admin_update_usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:minHeight="48dp"
-        android:text="Name"
-        tools:layout_editor_absoluteX="98dp"
-        tools:layout_editor_absoluteY="234dp" />
+        app:layout_constraintTop_toBottomOf="@+id/editUsuario_admin_update_usuario"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
