@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".socios_barcos_insertar"
+    android:background="#03052E">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="36dp"
+        tools:layout_editor_absoluteY="337dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/group_2"
+                android:layout_width="415dp"
+                android:layout_height="91dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="60dp"
+                android:background="#D9D9D9"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_marginLeft="18dp"
+                    android:text="INSERTAR BARCO"
+                    android:textAlignment="textEnd"
+                    android:textColor="#03052E"
+                    android:textSize="20sp" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="74dp"
+                    android:layout_height="match_parent"
+                    android:layout_alignLeft="@id/textView7"
+                    android:layout_marginLeft="183dp"
+                    app:srcCompat="@mipmap/logo" />
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="80dp"
+                android:layout_marginEnd="149dp"
+                android:text="Id del Barco"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/edtSocioIdBarco"
+                android:layout_width="208dp"
+                android:layout_height="43dp"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/custom_input"
+                android:drawablePadding="12dp"
+                android:ems="10"
+                android:hint="ID BARCO"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="#CCD1D1"
+                app:layout_constraintTop_toBottomOf="@+id/textView5"
+                tools:layout_editor_absoluteX="102dp" />
+
+            <TextView
+                android:id="@+id/textView24"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="149dp"
+                android:layout_marginTop="29dp"
+                android:layout_marginEnd="149dp"
+                android:text="Nombre del Barco"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSocioIdBarcoIdBarco" />
+
+            <EditText
+                android:id="@+id/txtSocioNomBarco"
+                android:layout_width="212dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="104dp"
+                android:layout_marginTop="23dp"
+                android:layout_marginEnd="98dp"
+                android:background="@drawable/custom_input"
+
+                android:ems="10"
+                android:hint="NOMBRE BARCO"
+                android:inputType="textPersonName"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="#CCD1D1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView24" />
+
+            <TextView
+                android:id="@+id/textView29"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="163dp"
+                android:layout_marginTop="22dp"
+                android:layout_marginEnd="164dp"
+                android:text="Id del Amarre"
+                android:textColor="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtSocioNomBarco" />
+
+            <EditText
+                android:id="@+id/edtSocioIdAmarre"
+                android:layout_width="211dp"
+                android:layout_height="39dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="104dp"
+                android:background="@drawable/custom_input"
+                android:ems="10"
+                android:hint="ID AMARRE"
+                android:inputType="number"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textColorHint="#CCD1D1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView29" />
+
+            <Button
+                android:id="@+id/btnSocioAggBarco"
+                android:layout_width="124dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="149dp"
+                android:layout_marginTop="95dp"
+                android:layout_marginEnd="158dp"
+                android:text="AGREGAR"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.6"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtSocioIdAmarre" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

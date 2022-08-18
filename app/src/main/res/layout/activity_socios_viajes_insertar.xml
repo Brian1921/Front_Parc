@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#03052E"
+    tools:context=".socio_viajes_insertar">
+    <RelativeLayout
+        android:id="@+id/group_2"
+        android:layout_width="match_parent"
+        android:layout_height="91dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="68dp"
+        android:background="#D9D9D9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="AGREGAR VIAJES"
+            android:textAlignment="textEnd"
+            android:textColor="#03052E"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/imageView4"
+            android:layout_width="74dp"
+            android:layout_height="match_parent"
+            android:layout_alignLeft="@id/textView6"
+            android:layout_marginLeft="160dp"
+            app:srcCompat="@mipmap/logo" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView19"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="200dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="200dp"
+        android:textColor="@color/white"
+        android:text="Id"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/group_2" />
+
+    <EditText
+        android:id="@+id/editId_socio_insert_viajes"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/black"
+        android:textColorHint="#CCD1D1"
+        android:hint="Id. del Viaje"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView19" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="157dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="156dp"
+        android:textColor="@color/white"
+        android:text="Fecha de Salida"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editId_socio_insert_viajes" />
+
+    <EditText
+        android:id="@+id/editFS_socio_insert_viajes"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:editable="false"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/black"
+        android:textColorHint="#CCD1D1"
+        android:hint="Fecha de Salida"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+    <TextView
+        android:id="@+id/textView31"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="151dp"
+        android:textColor="@color/white"
+        android:text="Fecha de Llegada"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFS_socio_insert_viajes" />
+
+    <EditText
+        android:id="@+id/editFL_socio_insert_viajes"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:editable="false"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/black"
+        android:textColorHint="#CCD1D1"
+        android:hint="Fecha de Llegada"
+        android:inputType="date"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView31" />
+
+    <TextView
+        android:id="@+id/textView32"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="181dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="182dp"
+        android:textColor="@color/white"
+        android:text="Destino"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editFL_socio_insert_viajes" />
+
+    <EditText
+        android:id="@+id/editDestino_socio_insert_viajes"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/black"
+        android:textColorHint="#CCD1D1"
+        android:hint="Destino"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView32" />
+
+    <TextView
+        android:id="@+id/textView33"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="179dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="180dp"
+        android:textColor="@color/white"
+        android:text="Id Barco"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editDestino_socio_insert_viajes" />
+
+    <EditText
+        android:id="@+id/editId_barco_socio_insert_viajes"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/black"
+        android:textColorHint="#CCD1D1"
+        android:hint="Id. del Barco"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+
+    <TextView
+        android:id="@+id/textView34"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="178dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="177dp"
+        android:textColor="@color/white"
+        android:text="Id Patron"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editId_barco_socio_insert_viajes" />
+
+    <EditText
+        android:id="@+id/edit_Id_patron_socio_insert_viajes"
+        android:layout_width="wrap_content"
+        android:layout_height="42dp"
+        android:layout_marginStart="101dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:background="@drawable/custom_input"
+        android:textColor="@color/black"
+        android:textColorHint="#CCD1D1"
+        android:hint="Id. del Patron"
+        android:inputType="number"
+        android:textAlignment="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+
+    <Button
+        android:id="@+id/btnAgregrar_socio_insert_viajes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="154dp"
+        android:layout_marginTop="35dp"
+        android:layout_marginEnd="154dp"
+        android:backgroundTint="#D9D9D9"
+        android:textColor="#03052E"
+        android:text="Agregar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edit_Id_patron_socio_insert_viajes" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,7 +8,7 @@
     tools:context=".socio_menu">
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnSocioBarco"
         android:layout_width="113dp"
         android:layout_height="45dp"
         android:layout_marginStart="40dp"
@@ -60,7 +60,7 @@
         android:background="@drawable/bordes"
         android:text="VIAJES"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/btnSocioBarco" />
 
     <Button
         android:id="@+id/btnSocioPatrones"
