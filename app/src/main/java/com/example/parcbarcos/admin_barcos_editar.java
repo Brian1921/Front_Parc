@@ -40,6 +40,12 @@ public class admin_barcos_editar extends AppCompatActivity {
 
         btnEditar_admin_barco = findViewById(R.id.btnEditar_admin_barco);
         btnEditar_admin_barco.setOnClickListener(this::Onclick);
+
+        Intent intent=getIntent();
+        position=intent.getExtras().getInt("position");
+
+        EditNom_barco_admin.setText(admin_barcos_crud.class_admin_barcosArrayList.get(position).getNom_barco());
+        EditId_amarre.setText(admin_barcos_crud.class_admin_barcosArrayList.get(position).getId_amarre());
     }
     private void Onclick(View view) {
         int id= view.getId();

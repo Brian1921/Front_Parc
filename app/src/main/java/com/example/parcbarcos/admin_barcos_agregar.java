@@ -20,7 +20,7 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-public class admin_barcos_agregar extends AppCompatActivity {
+public class admin_barcos_agregar extends AppCompatActivity  implements View.OnClickListener{
     EditText editIdbarco, editbarco, editIdSociobarco, editIdAmabarco;
     Button btnAgregar;
     RequestQueue requestQueue;
@@ -35,15 +35,9 @@ public class admin_barcos_agregar extends AppCompatActivity {
         editIdAmabarco = findViewById(R.id.editIdAma_admin_crear_barco);
 
         btnAgregar = findViewById(R.id.btnAgregar_admin_barco);
-        btnAgregar.setOnClickListener(this::Onclick);
+        btnAgregar.setOnClickListener(this::onClick);
     }
 
-    private void Onclick(View view) {
-        int id= view.getId();
-        if(id==R.id.btnAgregar_admin_barco){
-            insertarBarcoAdmin("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/barcos/insert.php");
-        }
-    }
 
     private void insertarBarcoAdmin(String url) {
         if(editIdbarco.getText().toString().isEmpty()){
@@ -83,4 +77,12 @@ public class admin_barcos_agregar extends AppCompatActivity {
             requestQueue.add(stringRequest);
             }
         }
+
+    @Override
+    public void onClick(View view) {
+        int id= view.getId();
+        if(id==R.id.btnAgregar_admin_barco){
+            insertarBarcoAdmin("http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/barcos/insert.php");
+        }
+    }
 }
