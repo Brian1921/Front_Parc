@@ -3,26 +3,27 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_barcos_crud.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_barcos_editar.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_menu.xml" value="0.10989583333333333" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_usuarios_crud.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_admin_usuarios_editar.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/activity_patron_menu.xml" value="0.25" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_usuarios.xml" value="0.25" />
         <entry key="..\:/Users/brian/AndroidStudioProjects/parcBarcos/app/src/main/res/layout/list_viajes.xml" value="0.25" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_adapter_class_socio_barcos.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_barcos_crud.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_barcos_editar.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_menu.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_patrones_agregar.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_patrones_crud.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_patrones_editar.xml" value="0.2" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_socios_agregar.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_usuarios_crud.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_viajes_crear.xml" value="0.25" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_viajes_crud.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_admin_viajes_editar.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_barcos_insertar.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_socio_menu.xml" value="0.2" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_socios_barcos_crud.xml" value="0.16032608695652173" />
-        <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_socios_barcos_editar.xml" value="0.16032608695652173" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_socios_barcos_insertar.xml" value="0.22" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_socios_crud.xml" value="0.12090163934426229" />
         <entry key="..\:/Users/hecto/AndroidStudioProjects/Front_Parc/app/src/main/res/layout/activity_socios_patrones_crud.xml" value="0.16032608695652173" />
