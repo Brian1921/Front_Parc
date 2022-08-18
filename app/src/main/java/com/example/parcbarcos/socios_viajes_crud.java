@@ -90,14 +90,8 @@ public class socios_viajes_crud extends AppCompatActivity {
                         String dest_vi = object.getString("destino");
                         String idBar_vi = object.getString("nom_barco");
                         String idPat_vi = object.getString("nom_patron");
-                        String id_estado_vi="";
-                        if(object.getString("id_estado_viaje").equals("1")){
-                            id_estado_vi = "Estado: Activo";
-                        }else{
-                            id_estado_vi = "Estado: Eliminado";
-                        }
 
-                        socioViajes = new class_socios_viajes(id_vi, fechSal_vi, fechLleg_vi, dest_vi, idBar_vi, idPat_vi, id_estado_vi);
+                        socioViajes = new class_socios_viajes(id_vi, fechSal_vi, fechLleg_vi, dest_vi, idBar_vi, idPat_vi);
                         class_socios_viajesArrayList.add(socioViajes);
                         adapter.notifyDataSetChanged();
                     }

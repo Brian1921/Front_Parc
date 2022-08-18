@@ -60,7 +60,7 @@ public class socios_barcos_crud extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i) {
                             case 0:
-                                //startActivity(new Intent(getApplicationContext(), admin_patrones_editar.class).putExtra("position", position));
+                                startActivity(new Intent(getApplicationContext(), socio_barcos_editar.class).putExtra("position", position));
                                 break;
                             case 1:
                                 //eliminarSocioBarcos(class_socios_barcosArrayList.get(position).getId_barco());

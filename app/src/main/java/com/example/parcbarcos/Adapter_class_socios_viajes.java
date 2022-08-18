@@ -30,11 +30,10 @@ public class Adapter_class_socios_viajes extends ArrayAdapter<class_socios_viaje
 
         TextView txtId_viaje = view.findViewById(R.id.txt_Socio_Id_viaje);
         TextView txtFecha_Sal = view.findViewById(R.id.txt_Socio_Fecha_Sal);
-        TextView txtFecha_Lle = view.findViewById(R.id.txtFecha_Lle);
-        TextView txtDestino = view.findViewById(R.id.txtDestino);
-        TextView txtNomBarco_viaje = view.findViewById(R.id.txtNomBarco_viaje);
-        TextView txtNomPatron_viaje = view.findViewById(R.id.txtNomPatron_viaje);
-        TextView txtId_estado_viaje = view.findViewById(R.id.txtEst_viaje);
+        TextView txtFecha_Lle = view.findViewById(R.id.txt_socio_Fecha_Lle);
+        TextView txtDestino = view.findViewById(R.id.txt_socio_Destino);
+        TextView txtNomBarco_viaje = view.findViewById(R.id.txt_socio_NomBarco_viaje);
+        TextView txtNomPatron_viaje = view.findViewById(R.id.txt_socio_NomPatron_viaje);
 
         txtId_viaje.setText(arrayViajes.get(position).getId_viaje());
         txtFecha_Sal.setText(arrayViajes.get(position).getFecha_salida());
@@ -42,7 +41,6 @@ public class Adapter_class_socios_viajes extends ArrayAdapter<class_socios_viaje
         txtDestino.setText(arrayViajes.get(position).getDestino());
         txtNomBarco_viaje.setText(arrayViajes.get(position).getId_barco());
         txtNomPatron_viaje.setText(arrayViajes.get(position).getId_patron());
-        txtId_estado_viaje.setText(arrayViajes.get(position).getId_estado_viaje());
 
         return view;
     }

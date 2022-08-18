@@ -8,19 +8,17 @@ public class class_socios_viajes {
     private String destino;
     private String id_barco;
     private String id_patron;
-    private String id_estado_viaje;
 
     public class_socios_viajes() {
     }
 
-    public class_socios_viajes(String id_viaje, String fecha_salida, String fecha_llegada, String destino, String id_barco, String id_patron, String id_estado_viaje) {
+    public class_socios_viajes(String id_viaje, String fecha_salida, String fecha_llegada, String destino, String id_barco, String id_patron) {
         this.id_viaje = id_viaje;
         this.fecha_salida = fecha_salida;
         this.fecha_llegada = fecha_llegada;
         this.destino = destino;
         this.id_barco = id_barco;
         this.id_patron = id_patron;
-        this.id_estado_viaje = id_estado_viaje;
     }
 
     public String getId_viaje() {
@@ -71,11 +69,4 @@ public class class_socios_viajes {
         this.id_patron = id_patron;
     }
 
-    public String getId_estado_viaje() {
-        return id_estado_viaje;
-    }
-
-    public void setId_estado_viaje(String id_estado_viaje) {
-        this.id_estado_viaje = id_estado_viaje;
-    }
 }
