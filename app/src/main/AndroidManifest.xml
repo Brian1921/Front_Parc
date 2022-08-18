@@ -28,6 +28,15 @@
             android:name=".socios_viajes_crud"
             android:exported="false" />
         <activity
+            android:name=".admin_barcos_agregar"
+            android:exported="false" />
+        <activity
+            android:name=".admin_barcos_editar"
+            android:exported="false" />
+        <activity
+            android:name=".admin_usuarios_editar"
+            android:exported="false" />
+        <activity
             android:name=".admin_usuarios_crud"
             android:exported="false" />
         <activity

@@ -41,6 +41,7 @@ public class admin_viajes_crud extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_admin_viajes_crud);
+
         listView = findViewById(R.id.listReadAdminViajes);
         adapter = new Adapter_class_admin_viajes(this, class_admin_viajesArrayList);
         listView.setAdapter(adapter);

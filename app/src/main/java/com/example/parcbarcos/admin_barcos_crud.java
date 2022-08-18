@@ -59,10 +59,10 @@ public class admin_barcos_crud extends AppCompatActivity {
                     public void onClick(DialogInterface dialogInterface, int i) {
                         switch (i) {
                             case 0:
-                                startActivity(new Intent(getApplicationContext(), admin_patrones_editar.class).putExtra("position", position));
+                                startActivity(new Intent(getApplicationContext(), admin_barcos_editar.class).putExtra("position", position));
                                 break;
                             case 1:
-                                eliminarAdminPatrones(class_admin_barcosArrayList.get(position).getId_barco());
+                                eliminarAdminBarcos(class_admin_barcosArrayList.get(position).getId_barco());
                                 break;
                         }
                     }
@@ -70,9 +70,9 @@ public class admin_barcos_crud extends AppCompatActivity {
                 builder.create().show();
             }
         });
-        listarPatronesAdmin();
+        listarBarcosAdmin();
     }
-    private void listarPatronesAdmin() {
+    private void listarBarcosAdmin() {
         String url="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/barcos/read.php";
         StringRequest request = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
             @Override
@@ -124,24 +124,24 @@ public class admin_barcos_crud extends AppCompatActivity {
 
     }
 
-    public void agregarAdminPatrones(View view){
-        startActivity(new Intent(getApplicationContext(), admin_patrones_agregar.class));
+    public void agregarAdminBarcos(View view){
+        startActivity(new Intent(getApplicationContext(), admin_barcos_agregar.class));
     }
 
-    public void eliminarAdminPatrones(String id){
-        String urlel="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/patrones/delete.php";
+    public void eliminarAdminBarcos(String id){
+        String urlel="http://"+getResources().getText(R.string.ip)+"/crud_club_barcos/admin/barcos/delete.php";
         StringRequest request = new StringRequest(Request.Method.POST, urlel, new Response.Listener<String>() {
 
             @Override
             public void onResponse(String response) {
-                Toast.makeText(admin_barcos_crud.this, "Eliminando Patron", Toast.LENGTH_SHORT).show();
+                Toast.makeText(admin_barcos_crud.this, "Eliminando Barco", Toast.LENGTH_SHORT).show();
                 finish();
                 startActivity(new Intent(getApplicationContext(), admin_barcos_crud.class));
             }
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(admin_barcos_crud.this, "Error al eliminar patron", Toast.LENGTH_SHORT).show();
+                Toast.makeText(admin_barcos_crud.this, "Error al eliminar barcp", Toast.LENGTH_SHORT).show();
             }
         }){
             @Override
@@ -155,4 +155,5 @@ public class admin_barcos_crud extends AppCompatActivity {
         requestQueue= Volley.newRequestQueue(this);
         requestQueue.add(request);
     }
+
 }
