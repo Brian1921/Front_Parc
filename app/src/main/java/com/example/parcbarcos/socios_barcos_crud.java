@@ -86,7 +86,7 @@ public class socios_barcos_crud extends AppCompatActivity {
                     JSONObject objetojson = new JSONObject(response);
                     JSONArray arrayjson = objetojson.getJSONArray("Datos");
                     for (int i = 0; i < arrayjson.length(); i++) {
-                        Toast.makeText(socios_barcos_crud.this, "Entro a for", Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(socios_barcos_crud.this, "Entro a for", Toast.LENGTH_SHORT).show();
                         JSONObject object = arrayjson.getJSONObject(i);
 
                         String id_bar = object.getString("id_barco");
